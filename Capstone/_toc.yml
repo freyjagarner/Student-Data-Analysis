@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: A Lot
+- file: Courses
+- file: Student-Info
+- file: markdown
+- file: notebooks

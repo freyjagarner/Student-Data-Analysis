@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "c:\users\chels\appdata\local\programs\python\python39\lib\site-packages\nbclient\client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+vle = vle[['id_site', 'code_module', 'code_presentation', 'activity_type']]
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mKeyError[0m                                  Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp/ipykernel_143956/1803440924.py[0m in [0;36m<module>[1;34m[0m
+[1;32m----> 1[1;33m [0mvle[0m [1;33m=[0m [0mvle[0m[1;33m[[0m[1;33m[[0m[1;34m'id_site'[0m[1;33m,[0m [1;34m'code_module'[0m[1;33m,[0m [1;34m'code_presentation'[0m[1;33m,[0m [1;34m'activity_type'[0m[1;33m][0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
+[0m
+[1;32mc:\users\chels\appdata\local\programs\python\python39\lib\site-packages\pandas\core\frame.py[0m in [0;36m__getitem__[1;34m(self, key)[0m
+[0;32m   3459[0m             [1;32mif[0m [0mis_iterator[0m[1;33m([0m[0mkey[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   3460[0m                 [0mkey[0m [1;33m=[0m [0mlist[0m[1;33m([0m[0mkey[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;32m-> 3461[1;33m             [0mindexer[0m [1;33m=[0m [0mself[0m[1;33m.[0m[0mloc[0m[1;33m.[0m[0m_get_listlike_indexer[0m[1;33m([0m[0mkey[0m[1;33m,[0m [0maxis[0m[1;33m=[0m[1;36m1[0m[1;33m)[0m[1;33m[[0m[1;36m1[0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m   3462[0m [1;33m[0m[0m
+[0;32m   3463[0m         [1;31m# take() does not accept boolean indexers[0m[1;33m[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32mc:\users\chels\appdata\local\programs\python\python39\lib\site-packages\pandas\core\indexing.py[0m in [0;36m_get_listlike_indexer[1;34m(self, key, axis)[0m
+[0;32m   1312[0m             [0mkeyarr[0m[1;33m,[0m [0mindexer[0m[1;33m,[0m [0mnew_indexer[0m [1;33m=[0m [0max[0m[1;33m.[0m[0m_reindex_non_unique[0m[1;33m([0m[0mkeyarr[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m   1313[0m [1;33m[0m[0m
+[1;32m-> 1314[1;33m         [0mself[0m[1;33m.[0m[0m_validate_read_indexer[0m[1;33m([0m[0mkeyarr[0m[1;33m,[0m [0mindexer[0m[1;33m,[0m [0maxis[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m   1315[0m [1;33m[0m[0m
+[0;32m   1316[0m         if needs_i8_conversion(ax.dtype) or isinstance(
+
+[1;32mc:\users\chels\appdata\local\programs\python\python39\lib\site-packages\pandas\core\indexing.py[0m in [0;36m_validate_read_indexer[1;34m(self, key, indexer, axis)[0m
+[0;32m   1375[0m [1;33m[0m[0m
+[0;32m   1376[0m             [0mnot_found[0m [1;33m=[0m [0mlist[0m[1;33m([0m[0mensure_index[0m[1;33m([0m[0mkey[0m[1;33m)[0m[1;33m[[0m[0mmissing_mask[0m[1;33m.[0m[0mnonzero[0m[1;33m([0m[1;33m)[0m[1;33m[[0m[1;36m0[0m[1;33m][0m[1;33m][0m[1;33m.[0m[0munique[0m[1;33m([0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;32m-> 1377[1;33m             [1;32mraise[0m [0mKeyError[0m[1;33m([0m[1;34mf"{not_found} not in index"[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m   1378[0m [1;33m[0m[0m
+[0;32m   1379[0m [1;33m[0m[0m
+
+[1;31mKeyError[0m: "['id_site', 'activity_type'] not in index"
+KeyError: "['id_site', 'activity_type'] not in index"
+

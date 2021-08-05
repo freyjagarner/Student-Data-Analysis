@@ -51,8 +51,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="Courses.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -85,7 +83,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   Student Success Analysis and Prediction
   </a>
  </li>
 </ul>
@@ -141,7 +139,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Student-Info.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Assessments.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -157,11 +155,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/freyjagarner/Student-Data-Analysis"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FStudent-Info.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/freyjagarner/Student-Data-Analysis/issues/new?title=Issue%20on%20page%20%2FAssessments.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -182,7 +180,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Student-Info.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/freyjagarner/Student-Data-Analysis/master?urlpath=tree/C:\Users\Freyja\Documents\GitHub\WGU-BS-Data-Analytics-Capstone\Capstone/Assessments.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -215,13 +213,8 @@
         
               <div>
                 
-  <div class="cell tag_remove_input docutils container">
-</div>
-<p><a id='StudentInfo'></a></p>
-<h2>Student Info and Student Registration Dataframes</h2>
-<hr class="docutils" />
-<h4>Student Info</h4>
-<p>The student info dataframe contains information about students including the module and presentation they took, demographic information and the final result of their studies.</p>
+  <hr class="docutils" />
+<h2>Assessments Dataframe</h2><p>The assessments dataframe contains information about the unique assessments in each code module and presentation.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -244,16 +237,11 @@
       <th></th>
       <th>code_module</th>
       <th>code_presentation</th>
-      <th>id_student</th>
-      <th>gender</th>
-      <th>region</th>
-      <th>highest_education</th>
-      <th>imd_band</th>
-      <th>age_band</th>
-      <th>num_of_prev_attempts</th>
-      <th>studied_credits</th>
-      <th>disability</th>
-      <th>final_result</th>
+      <th>id_assessment</th>
+      <th>assessment_type</th>
+      <th>date</th>
+      <th>weight</th>
+      <th>module_presentation</th>
     </tr>
   </thead>
   <tbody>
@@ -261,128 +249,189 @@
       <th>0</th>
       <td>AAA</td>
       <td>2013J</td>
-      <td>11391</td>
-      <td>M</td>
-      <td>East Anglian Region</td>
-      <td>HE Qualification</td>
-      <td>90-100%</td>
-      <td>55&lt;=</td>
-      <td>0</td>
-      <td>240</td>
-      <td>N</td>
-      <td>Pass</td>
+      <td>1752</td>
+      <td>TMA</td>
+      <td>19.0</td>
+      <td>10.0</td>
+      <td>AAA2013J</td>
     </tr>
     <tr>
       <th>1</th>
       <td>AAA</td>
       <td>2013J</td>
-      <td>28400</td>
-      <td>F</td>
-      <td>Scotland</td>
-      <td>HE Qualification</td>
-      <td>20-30%</td>
-      <td>35-55</td>
-      <td>0</td>
-      <td>60</td>
-      <td>N</td>
-      <td>Pass</td>
+      <td>1753</td>
+      <td>TMA</td>
+      <td>54.0</td>
+      <td>20.0</td>
+      <td>AAA2013J</td>
     </tr>
     <tr>
       <th>2</th>
       <td>AAA</td>
       <td>2013J</td>
-      <td>30268</td>
-      <td>F</td>
-      <td>North Western Region</td>
-      <td>A Level or Equivalent</td>
-      <td>30-40%</td>
-      <td>35-55</td>
-      <td>0</td>
-      <td>60</td>
-      <td>Y</td>
-      <td>Withdrawn</td>
+      <td>1754</td>
+      <td>TMA</td>
+      <td>117.0</td>
+      <td>20.0</td>
+      <td>AAA2013J</td>
     </tr>
     <tr>
       <th>3</th>
       <td>AAA</td>
       <td>2013J</td>
-      <td>31604</td>
-      <td>F</td>
-      <td>South East Region</td>
-      <td>A Level or Equivalent</td>
-      <td>50-60%</td>
-      <td>35-55</td>
-      <td>0</td>
-      <td>60</td>
-      <td>N</td>
-      <td>Pass</td>
+      <td>1755</td>
+      <td>TMA</td>
+      <td>166.0</td>
+      <td>20.0</td>
+      <td>AAA2013J</td>
     </tr>
     <tr>
       <th>4</th>
       <td>AAA</td>
       <td>2013J</td>
-      <td>32885</td>
-      <td>F</td>
-      <td>West Midlands Region</td>
-      <td>Lower Than A Level</td>
-      <td>50-60%</td>
-      <td>0-35</td>
-      <td>0</td>
-      <td>60</td>
-      <td>N</td>
-      <td>Pass</td>
+      <td>1756</td>
+      <td>TMA</td>
+      <td>215.0</td>
+      <td>30.0</td>
+      <td>AAA2013J</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<h4>Contents</h4>
-<ul class="simple">
-<li><p><b>code_module</b>: The code module represents the course the student is taking.</p></li>
-<li><p><b>code_presentation</b>: The code presentations are the year and semester the student is taking the course.</p></li>
-<li><p><b>id_student</b>: The student ID is a unique identifier for each student</p></li>
-<li><p><b>gender</b>: The gender represents the binary gender of a student ‘M’ for students who identify as male and ‘F’ for students who identify as female.</p></li>
-<li><p><b>region</b>: Region represents the location of the student when they took the module. All regions are in the UK, Scotland, Ireland or Wales.</p></li>
-<li><p><b>highest_education</b>: Highest education is representative of a students highest level of formal academic achievement.</p>
-<ul>
-<li><p>Education levels in order from least to most formal education:</p>
-<ul>
-<li><p>No formal quals (qualifications)</p></li>
-<li><p>Lower than A Level which is nearly but not quite analagous to under high school level</p></li>
-<li><p>A Level or equivalent which is again nearly analagous to high school level, but more like college ready</p></li>
-<li><p>HE Qualification which stands for higher education qualification</p></li>
-<li><p>Post Graduate Qualification</p></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><b>imd_band</b>: The imd_band represents the Indices of multiple deprivation (IMD) score which is a commonly used method in the UK to measure poverty or deprivation in an area. The lower the score, the more ‘deprived’ the area is.</p></li>
-<li><p><b>age_band</b>: There are only three bins for age; 0-35, 35-55 and over 55</p></li>
-<li><p><b>num_of_prev_attempts</b>: The number of times the student has attempted the course previously.</p></li>
-<li><p><b>studied_credits</b>: The number of credits for the module the student is taking.</p></li>
-<li><p><b>disability</b>: Disability status is represented by a binary ‘Y’, yes a student does identify as having a disability and ‘N’, no a student does not identify as having a disability.</p></li>
-<li><p><b>final_results</b>: * The final result is the students overall result in the class.</p>
-<ul>
-<li><p>Possible Results include:</p>
-<ul>
-<li><p>Pass: The student passed the course</p></li>
-<li><p>Fail: The student did not pass the course</p></li>
-<li><p>Withdraw: The student withdrew before the course term ended</p></li>
-<li><p>Distinction: The student passed the class with distinction</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 <hr class="docutils" />
-<h3>Student Registration</h3>
-<p>The student registration dataframe contains information about the dates that students registered and,if applicable, unregistered from the module.</p>
-<h4>Contents</h4>
+<h4>Assessments Contents</h4>
 <ul class="simple">
-<li><p><b>date_registration</b> is the date that the student registered for the module relative to the start of the module. A negative value indicates that many days before the module began.</p></li>
-<li><p><b>date_unregistration</b> is the date that the student unregistered from the course module in relation to the start date of the course.</p></li>
+<li><p><b>code_module</b>: The code module represents the code name of the course the assessment was held for.</p></li>
+<li><p><b>code_presentation</b>: The presentation represents the presentation which the test was held for.</p></li>
+<li><p><b>id_assessment</b>: The assessment ID is the unique identifier for each assessment.</p></li>
+<li><p><b>assessment_type</b>: The assessment type represents the kind of assessment it was.</p>
+<ul>
+<li><p>There are three assessment types:</p>
+<ul>
+<li><p>TMA: Tutor Marked Assessment</p></li>
+<li><p>CMA: Computer Marked Assessment</p></li>
+<li><p>Exam: The Final Exam</p></li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p><b>date</b>: The date is how many days from the start of the course the assessment took place</p></li>
+<li><p><b>weight</b>: The weight is the weighted value of the assessment. Exams should have a weight of 100 which the rest of the assessments should add to 100 in total.</p></li>
+</ul>
+<p><b>Size</b></p>
 <div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<ul class="simple">
+<li><p>Number of Rows: 206</p></li>
+<li><p>Number of Columns: 7</p></li>
+</ul>
+</div>
+</div>
+<p><b>Data Types</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             object
+code_presentation       object
+id_assessment            int64
+assessment_type         object
+date                   float64
+weight                 float64
+module_presentation     object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>id_student and id_assessments are both categorical values and so should be converted to objects</p></li>
+</ul>
+<p><b>Null Values</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             0
+code_presentation       0
+id_assessment           0
+assessment_type         0
+date                   11
+weight                  0
+module_presentation     0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>We have 2,873 null data points for assessment date. The documentation of this dataset states that if the exam date is missing then it is as the end of the last presentation week. We can find this information in the courses dataframe.</p></li>
+</ul>
+<ul class="simple">
+<li><p>There are 173 null values for score. These records are, unfortunately not of much interest to us, since score is what we are trying to find the relationship for, and so we will discard them. This leaves us with no null data in assessments.</p></li>
+</ul>
+<p><b>Unique Counts</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module              7
+code_presentation        4
+id_assessment          206
+assessment_type          3
+date                    78
+weight                  24
+module_presentation     22
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><b>Unique Categorical Values</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
+
+code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#39;]
+
+id_assessment: [1752 1753 1754 1755 1756 1757 1758 1759 1760 1761 1762 1763 14991 14992
+ 14993 14994 14995 14984 14985 14986 14987 14988 14989 14990 15003 15004
+ 15005 15006 15007 14996 14997 14998 14999 15000 15001 15002 15015 15016
+ 15017 15018 15019 15008 15009 15010 15011 15012 15013 15014 15020 15021
+ 15022 15023 15024 15025 24286 24287 24288 24289 24282 24283 24284 24285
+ 24290 40087 24295 24296 24297 24298 24291 24292 24293 24294 24299 40088
+ 25341 25342 25343 25344 25345 25346 25347 25334 25335 25336 25337 25338
+ 25339 25340 25348 25349 25350 25351 25352 25353 25354 25355 25356 25357
+ 25358 25359 25360 25361 25362 25363 25364 25365 25366 25367 25368 30709
+ 30710 30711 30712 30713 30714 30715 30716 30717 30718 30719 30720 30721
+ 30722 30723 34865 34866 34867 34868 34869 34871 34870 34860 34861 34862
+ 34863 34864 34872 34878 34879 34880 34881 34882 34884 34883 34873 34874
+ 34875 34876 34877 34885 34891 34892 34893 34894 34895 34897 34896 34886
+ 34887 34888 34889 34890 34898 34904 34905 34906 34907 34908 34910 34909
+ 34899 34900 34901 34902 34903 34911 37418 37419 37420 37421 37422 37423
+ 37415 37416 37417 37424 37428 37429 37430 37431 37432 37433 37425 37426
+ 37427 37434 37438 37439 37440 37441 37442 37443 37435 37436 37437 37444]
+
+assessment_type: [&#39;TMA&#39; &#39;Exam&#39; &#39;CMA&#39;]
+
+module_presentation: [&#39;AAA2013J&#39; &#39;AAA2014J&#39; &#39;BBB2013B&#39; &#39;BBB2013J&#39; &#39;BBB2014B&#39; &#39;BBB2014J&#39;
+ &#39;CCC2014B&#39; &#39;CCC2014J&#39; &#39;DDD2013B&#39; &#39;DDD2013J&#39; &#39;DDD2014B&#39; &#39;DDD2014J&#39;
+ &#39;EEE2013J&#39; &#39;EEE2014B&#39; &#39;EEE2014J&#39; &#39;FFF2013B&#39; &#39;FFF2013J&#39; &#39;FFF2014B&#39;
+ &#39;FFF2014J&#39; &#39;GGG2013J&#39; &#39;GGG2014B&#39; &#39;GGG2014J&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><b>Duplicate Values:</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No Duplicate Values
+</pre></div>
+</div>
+</div>
+</div>
+<p><b>Statistics</b></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assessments</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -402,63 +451,54 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>code_module</th>
-      <th>code_presentation</th>
-      <th>id_student</th>
-      <th>date_registration</th>
-      <th>date_unregistration</th>
+      <th>date</th>
+      <th>weight</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>11391</td>
-      <td>-159.0</td>
-      <td>NaN</td>
+      <th>count</th>
+      <td>206.000000</td>
+      <td>206.000000</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>28400</td>
-      <td>-53.0</td>
-      <td>NaN</td>
+      <th>mean</th>
+      <td>150.966019</td>
+      <td>20.873786</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>30268</td>
-      <td>-92.0</td>
-      <td>12.0</td>
+      <th>std</th>
+      <td>78.161395</td>
+      <td>30.384224</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>31604</td>
-      <td>-52.0</td>
-      <td>NaN</td>
+      <th>min</th>
+      <td>12.000000</td>
+      <td>0.000000</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>32885</td>
-      <td>-176.0</td>
-      <td>NaN</td>
+      <th>25%</th>
+      <td>81.250000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>159.000000</td>
+      <td>12.500000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>227.000000</td>
+      <td>24.250000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>269.000000</td>
+      <td>100.000000</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The student registration dataframe matches 1:1 with the student_info dataframe only adding the date the student registered and the date, if applicable, they unregistered, and so we will merge these two dataframes</p>
-</div>
-<div class="cell tag_remove_input docutils container">
 </div>
 
     <script type="text/x-thebe-config">
@@ -486,8 +526,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Courses.html" title="previous page">&lt;no title&gt;</a>
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">Markdown Files</a>
 
         </div>
         

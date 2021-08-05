@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Capstone Project</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Student Success Analysis and Prediction
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Student_Info.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/freyjagarner/Student-Data-Analysis"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/freyjagarner/Student-Data-Analysis/issues/new?title=Issue%20on%20page%20%2FStudent_Info.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/freyjagarner/Student-Data-Analysis/master?urlpath=tree/C:\Users\Freyja\Documents\GitHub\WGU-BS-Data-Analytics-Capstone\Capstone/Student_Info.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h2>Student Info Dataframe</h2>
+<hr class="docutils" />
+<p>The student info dataframe contains information about students including the module and presentation they took, demographic information and the final result of their studies.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code_module</th>
+      <th>code_presentation</th>
+      <th>id_student</th>
+      <th>gender</th>
+      <th>region</th>
+      <th>highest_education</th>
+      <th>imd_band</th>
+      <th>age_band</th>
+      <th>num_of_prev_attempts</th>
+      <th>studied_credits</th>
+      <th>disability</th>
+      <th>final_result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>11391</td>
+      <td>M</td>
+      <td>East Anglian Region</td>
+      <td>HE Qualification</td>
+      <td>90-100%</td>
+      <td>55&lt;=</td>
+      <td>0</td>
+      <td>240</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>28400</td>
+      <td>F</td>
+      <td>Scotland</td>
+      <td>HE Qualification</td>
+      <td>20-30%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>30268</td>
+      <td>F</td>
+      <td>North Western Region</td>
+      <td>A Level or Equivalent</td>
+      <td>30-40%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>Y</td>
+      <td>Withdrawn</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>31604</td>
+      <td>F</td>
+      <td>South East Region</td>
+      <td>A Level or Equivalent</td>
+      <td>50-60%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>32885</td>
+      <td>F</td>
+      <td>West Midlands Region</td>
+      <td>Lower Than A Level</td>
+      <td>50-60%</td>
+      <td>0-35</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<h4>Contents</h4>
+<ul class="simple">
+<li><p><b>code_module</b>: The code module represents the course the student is taking.</p></li>
+<li><p><b>code_presentation</b>: The code presentations are the year and semester the student is taking the course.</p></li>
+<li><p><b>id_student</b>: The student ID is a unique identifier for each student</p></li>
+<li><p><b>gender</b>: The gender represents the binary gender of a student ‘M’ for students who identify as male and ‘F’ for students who identify as female.</p></li>
+<li><p><b>region</b>: Region represents the location of the student when they took the module. All regions are in the UK, Scotland, Ireland or Wales.</p></li>
+<li><p><b>highest_education</b>: Highest education is representative of a students highest level of formal academic achievement.</p>
+<ul>
+<li><p>Education levels in order from least to most formal education:</p>
+<ul>
+<li><p>No formal quals (qualifications)</p></li>
+<li><p>Lower than A Level which is nearly but not quite analagous to under high school level</p></li>
+<li><p>A Level or equivalent which is again nearly analagous to high school level, but more like college ready</p></li>
+<li><p>HE Qualification which stands for higher education qualification</p></li>
+<li><p>Post Graduate Qualification</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><b>imd_band</b>: The imd_band represents the Indices of multiple deprivation (IMD) score which is a commonly used method in the UK to measure poverty or deprivation in an area. The lower the score, the more ‘deprived’ the area is.</p></li>
+<li><p><b>age_band</b>: There are only three bins for age; 0-35, 35-55 and over 55</p></li>
+<li><p><b>num_of_prev_attempts</b>: The number of times the student has attempted the course previously.</p></li>
+<li><p><b>studied_credits</b>: The number of credits for the module the student is taking.</p></li>
+<li><p><b>disability</b>: Disability status is represented by a binary ‘Y’, yes a student does identify as having a disability and ‘N’, no a student does not identify as having a disability.</p></li>
+<li><p><b>final_results</b>: * The final result is the students overall result in the class.</p>
+<ul>
+<li><p>Possible Results include:</p>
+<ul>
+<li><p>Pass: The student passed the course</p></li>
+<li><p>Fail: The student did not pass the course</p></li>
+<li><p>Withdraw: The student withdrew before the course term ended</p></li>
+<li><p>Distinction: The student passed the class with distinction</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<h4>Student Info Information</h4><div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<p><b>Size</b></p>
+<ul class="simple">
+<li><p>Number of Rows: 32593</p></li>
+<li><p>Number of Columns: 12</p></li>
+</ul>
+<p><b>Data Types</b></p>
+</div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             object
+code_presentation       object
+id_student               int64
+gender                  object
+region                  object
+highest_education       object
+imd_band                object
+age_band                object
+num_of_prev_attempts     int64
+studied_credits          int64
+disability              object
+final_result            object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>id_student is currently an int64 datatype, but would be more appropriate as an object data type since it is categorical.</p></li>
+</ul>
+<p><b>Null Values:</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                0
+code_presentation          0
+id_student                 0
+gender                     0
+region                     0
+highest_education          0
+imd_band                1111
+age_band                   0
+num_of_prev_attempts       0
+studied_credits            0
+disability                 0
+final_result               0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<ul class="simple">
+<li><p>The imd_band variable has 1111 null values which we may have to work around.</p></li>
+</ul>
+</div>
+</div>
+<p><b>Unique Counts:</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                 7
+code_presentation           4
+id_student              28785
+gender                      2
+region                     13
+highest_education           5
+imd_band                   10
+age_band                    3
+num_of_prev_attempts        7
+studied_credits            61
+disability                  2
+final_result                4
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<ul class="simple">
+<li><p>There are 32593 entries for students but only 28785 unique student IDs.</p></li>
+<li><p>This may represent students who have taken the course more than once or who are taking multiple modules</p></li>
+</ul>
+</div>
+</div>
+<p><b>Unique Categorical Values</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
+
+code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#39;]
+
+id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
+
+gender: [&#39;M&#39; &#39;F&#39;]
+
+region: [&#39;East Anglian Region&#39; &#39;Scotland&#39; &#39;North Western Region&#39;
+ &#39;South East Region&#39; &#39;West Midlands Region&#39; &#39;Wales&#39; &#39;North Region&#39;
+ &#39;South Region&#39; &#39;Ireland&#39; &#39;South West Region&#39; &#39;East Midlands Region&#39;
+ &#39;Yorkshire Region&#39; &#39;London Region&#39;]
+
+highest_education: [&#39;HE Qualification&#39; &#39;A Level or Equivalent&#39; &#39;Lower Than A Level&#39;
+ &#39;Post Graduate Qualification&#39; &#39;No Formal quals&#39;]
+
+imd_band: [&#39;90-100%&#39; &#39;20-30%&#39; &#39;30-40%&#39; &#39;50-60%&#39; &#39;80-90%&#39; &#39;70-80%&#39; nan &#39;60-70%&#39;
+ &#39;40-50%&#39; &#39;10-20&#39; &#39;0-10%&#39;]
+
+age_band: [&#39;55&lt;=&#39; &#39;35-55&#39; &#39;0-35&#39;]
+
+disability: [&#39;N&#39; &#39;Y&#39;]
+
+final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinction&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>In imd_band the % sign is missing in 10-20. We will add that for consistency and clarity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changing all 10-20 values in student_info imd_band to 10-20% for consistency&#39;s sake</span>
+<span class="n">student_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;imd_band&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;10-20&#39;</span><span class="p">,</span> <span class="s1">&#39;imd_band&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;10-20%&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;imd_band&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;90-100%&#39; &#39;20-30%&#39; &#39;30-40%&#39; &#39;50-60%&#39; &#39;80-90%&#39; &#39;70-80%&#39; nan &#39;60-70%&#39;
+ &#39;40-50%&#39; &#39;10-20%&#39; &#39;0-10%&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><b>Duplicate Values</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No Duplicate Values&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><b>Statistics:</b></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num_of_prev_attempts</th>
+      <th>studied_credits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>32593</td>
+      <td>32593</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>6</td>
+      <td>655</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_attempts</span> <span class="o">=</span> <span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;num_of_prev_attempts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">markdown</span>
+
+* Most students do not have a previous attempt, but there is a high of {max_attempts} attempts.
+* We can only have data for up to two of the students attempts since we only have two years worth of data.
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<ul class="simple">
+<li><p>Most students do not have a previous attempt, but there is a high of 6 attempts.</p></li>
+<li><p>We can only have data for up to two of the students attempts since we only have two years worth of data.</p></li>
+</ul>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;code_module&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;code_presentation&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;Greens_d&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">student_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Student_Info_28_0.png" src="_images/Student_Info_28_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students_per_presentation_module</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;code_module&#39;</span><span class="p">],</span> <span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">count</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">students_per_presentation_module</span> <span class="o">=</span> <span class="n">students_per_presentation_module</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">,</span> <span class="s1">&#39;code_module&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span><span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span><span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students_per_presentation_module</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code_module</th>
+      <th>code_presentation</th>
+      <th>id_student</th>
+      <th>year</th>
+      <th>month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BBB</td>
+      <td>2013B</td>
+      <td>1767</td>
+      <td>2013</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DDD</td>
+      <td>2013B</td>
+      <td>1303</td>
+      <td>2013</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>FFF</td>
+      <td>2013B</td>
+      <td>1614</td>
+      <td>2013</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>383</td>
+      <td>2013</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>BBB</td>
+      <td>2013J</td>
+      <td>2237</td>
+      <td>2013</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>DDD</td>
+      <td>2013J</td>
+      <td>1938</td>
+      <td>2013</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>EEE</td>
+      <td>2013J</td>
+      <td>1052</td>
+      <td>2013</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>FFF</td>
+      <td>2013J</td>
+      <td>2283</td>
+      <td>2013</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>GGG</td>
+      <td>2013J</td>
+      <td>952</td>
+      <td>2013</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>BBB</td>
+      <td>2014B</td>
+      <td>1613</td>
+      <td>2014</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>CCC</td>
+      <td>2014B</td>
+      <td>1936</td>
+      <td>2014</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>DDD</td>
+      <td>2014B</td>
+      <td>1228</td>
+      <td>2014</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>EEE</td>
+      <td>2014B</td>
+      <td>694</td>
+      <td>2014</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>FFF</td>
+      <td>2014B</td>
+      <td>1500</td>
+      <td>2014</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>GGG</td>
+      <td>2014B</td>
+      <td>833</td>
+      <td>2014</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>AAA</td>
+      <td>2014J</td>
+      <td>365</td>
+      <td>2014</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>BBB</td>
+      <td>2014J</td>
+      <td>2292</td>
+      <td>2014</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>CCC</td>
+      <td>2014J</td>
+      <td>2498</td>
+      <td>2014</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>DDD</td>
+      <td>2014J</td>
+      <td>1803</td>
+      <td>2014</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>EEE</td>
+      <td>2014J</td>
+      <td>1188</td>
+      <td>2014</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>FFF</td>
+      <td>2014J</td>
+      <td>2365</td>
+      <td>2014</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>GGG</td>
+      <td>2014J</td>
+      <td>749</td>
+      <td>2014</td>
+      <td>J</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chelsey De Dios<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

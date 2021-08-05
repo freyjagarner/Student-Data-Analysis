@@ -21,7 +21,7 @@ def markdown(line, cell):
 
 # The courses datframe has information for all modules and their presentations.
 
-# In[2]:
+# In[3]:
 
 
 courses.head()
@@ -39,11 +39,9 @@ courses.head()
 # 
 # <h4>Courses Information</h4>
 
-# In[3]:
+# In[4]:
 
 
-courses_rowlen = analyze_df(courses, rowlen=True)
-courses_collen = analyze_df(courses, collen=True)
 courses_types = analyze_df(courses, types=True)
 courses_nulls = analyze_df(courses, nulls=True)
 courses_nunique = analyze_df(courses, uniques=True)
@@ -51,25 +49,36 @@ courses_dupes = analyze_df(courses, dupes=True)
 courses_nums = analyze_df(courses, nums=True)
 
 
-# In[4]:
+# In[5]:
 
 
 md(f'''
-
 <b>Size</b>
     
-* Number of Rows: {courses_rowlen}
-* Number of Columns: {courses_collen}
+* Number of Rows: {analyze_df(courses, rowlen=True)}
+* Number of Columns: {analyze_df(courses, collen=True)}
 
-<b>Null Values:</b>
-    
-* {courses_nulls}
-
-<b>Unique Column Counts:</b>
+<b>Data Types</b>
 ''')
 
 
-# In[5]:
+# In[6]:
+
+
+courses.dtypes
+
+
+# <b>Null Values:</b>
+
+# In[7]:
+
+
+courses_nulls
+
+
+# <b>Unique Counts:</b>
+
+# In[8]:
 
 
 courses.nunique()
@@ -77,20 +86,33 @@ courses.nunique()
 
 # <b>Unique Categorical Values</b>:
 
-# In[6]:
+# In[9]:
 
 
-print(f'''
-       Code Modules: {courses['code_module'].explode().unique()}
-       Code Presentations: {courses['code_presentation'].explode().unique()}
-      ''')
+unique_vals(courses)
+
+
+# <b>Duplicate Values</b>
+
+# In[10]:
+
+
+analyze_df(courses, dupes=True)
+
+
+# <b>Statistics:</b>
+
+# In[11]:
+
+
+courses.describe().round(1)
 
 
 # ---
 # 
 # <h4>Modules and Presentations</h4>
 
-# In[7]:
+# In[57]:
 
 
 mod_count = courses['code_module'].nunique()
@@ -102,14 +124,14 @@ avg_mod_count = round(courses['module_presentation_length'].mean(), 1)
 md(f'''* There are {mod_count} unique modules delivered over {presentation_count} presentations as detailed below:''')
 
 
-# In[8]:
+# In[16]:
 
 
 # making a crosstab to map each code module to its presentation
 pd.crosstab(index=courses['code_module'], columns=courses['code_presentation'])
 
 
-# In[9]:
+# In[29]:
 
 
 get_ipython().run_cell_magic('markdown', '', '\n---\n\n<h4>Module Presentation Length</h4>\n\n* Modules range from {min_mod_count} to {max_mod_count} days in length.\n* The average module is {avg_mod_count} days.')

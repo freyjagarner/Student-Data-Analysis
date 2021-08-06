@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>Student Info and Student Registration &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -87,15 +87,40 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Courses.html">
+   Courses
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Info.html">
+   Student Info
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Registration.html">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Assessment.html">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VLE.html">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -201,7 +226,12 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-info-information">
+   Student Info Information
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -217,7 +247,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12752</span><span class="o">/</span><span class="mf">1642215727.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12856</span><span class="o">/</span><span class="mf">3594874935.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@register_cell_magic</span>
@@ -237,7 +267,8 @@
 </div>
 </div>
 <p><a id='StudentInfo'></a></p>
-<h2>Student Info and Student Registration Cleaning</h2>
+<div class="section" id="student-info-and-student-registration">
+<h1>Student Info and Student Registration<a class="headerlink" href="#student-info-and-student-registration" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -249,9 +280,25 @@
 </ul>
 </div>
 <div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12856</span><span class="o">/</span><span class="mf">1800263459.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># left join and merge student info with student registration</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">student_info_reg</span> <span class="o">=</span> <span class="n">student_info</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">student_registration</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;code_module&#39;</span><span class="p">,</span> <span class="s1">&#39;code_presentation&#39;</span><span class="p">,</span> <span class="s1">&#39;id_student&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># changing the student info dataframe to include only records where num_prev_attempts is</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">student_info_reg</span> <span class="o">=</span> <span class="n">student_info_reg</span><span class="p">[</span><span class="n">student_info_reg</span><span class="p">[</span><span class="s1">&#39;num_of_prev_attempts&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;student_info&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <hr class="docutils" />
-<h4>Student Info Information</h4><p><b>Updated Dataframe</b></p>
+<div class="section" id="student-info-information">
+<h2>Student Info Information<a class="headerlink" href="#student-info-information" title="Permalink to this headline">¶</a></h2>
+<p><strong>Updated Dataframe</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -368,12 +415,12 @@
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<p><b>Size</b></p>
+<p><strong>Size</strong></p>
 <ul class="simple">
 <li><p>Number of Rows: 28421</p></li>
 <li><p>Number of Columns: 12</p></li>
 </ul>
-<p><b>Data Types</b></p>
+<p><strong>Data Types</strong></p>
 </div>
 </div>
 <div class="cell tag_remove_input docutils container">
@@ -400,7 +447,7 @@ dtype: object
 </ul>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Null Values:</b></p>
+<p><strong>Null Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                0
@@ -425,7 +472,7 @@ dtype: int64
 <li><p>There are 19,809 null values for date_unregistration which represent the students that did not withdraw from the course.</p></li>
 <li><p>We have 38 null values for date_registration, and no mention of this in the dataset documentation, so we will treat this as missing data.</p></li>
 </ul>
-<p><b>Unique Counts:</b></p>
+<p><strong>Unique Counts:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                7
@@ -445,7 +492,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p><b>Unique Categorical Values</b></p>
+<p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
@@ -492,7 +539,7 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 </div>
 </div>
 </div>
-<p><b>Duplicate Values</b></p>
+<p><strong>Duplicate Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No Duplicate Values&#39;
@@ -634,7 +681,7 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 </table>
 </div></div></div>
 </div>
-<p><b>Duplicate Student ID’s</b></p>
+<p><strong>Duplicate Student ID’s</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># finding student records with duplicate ID&#39;s</span>
@@ -773,7 +820,7 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 <p>We have 2325 students whose ID is listed more than once and a total of 4636 duplicate records. These students do seem to be in different courses, and so we will leave them</p>
 </div>
 </div>
-<p><b>Statistics:</b></p>
+<p><strong>Statistics:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -968,7 +1015,7 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 </ul>
 </div>
 </div>
-<p><b>All Students with an unregistration point after 269 days:</b></p>
+<p><strong>All Students with an unregistration point after 269 days:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1026,6 +1073,8 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 <ul class="simple">
 <li><p>It seems to be just this one student is an outlier, but should not affect our overall analysis so we will leave this intact</p></li>
 </ul>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

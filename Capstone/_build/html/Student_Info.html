@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>Student Info &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Student Registration Dataframe" href="Student_Registration.html" />
+    <link rel="prev" title="Courses" href="Courses.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,15 +89,40 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Courses.html">
+   Courses
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Student Info
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Registration.html">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Assessment.html">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VLE.html">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -201,7 +228,17 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contents">
+   Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-info-information">
+   Student Info Information
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -213,131 +250,32 @@
         
               <div>
                 
-  <h2>Student Info Dataframe</h2>
+  <div class="section" id="student-info">
+<h1>Student Info<a class="headerlink" href="#student-info" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <p>The student info dataframe contains information about students including the module and presentation they took, demographic information and the final result of their studies.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_3832</span><span class="o">/</span><span class="mf">1112623321.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># looking at the student_info dataframe</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">student_info</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>code_module</th>
-      <th>code_presentation</th>
-      <th>id_student</th>
-      <th>gender</th>
-      <th>region</th>
-      <th>highest_education</th>
-      <th>imd_band</th>
-      <th>age_band</th>
-      <th>num_of_prev_attempts</th>
-      <th>studied_credits</th>
-      <th>disability</th>
-      <th>final_result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>11391</td>
-      <td>M</td>
-      <td>East Anglian Region</td>
-      <td>HE Qualification</td>
-      <td>90-100%</td>
-      <td>55&lt;=</td>
-      <td>0</td>
-      <td>240</td>
-      <td>N</td>
-      <td>Pass</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>28400</td>
-      <td>F</td>
-      <td>Scotland</td>
-      <td>HE Qualification</td>
-      <td>20-30%</td>
-      <td>35-55</td>
-      <td>0</td>
-      <td>60</td>
-      <td>N</td>
-      <td>Pass</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>30268</td>
-      <td>F</td>
-      <td>North Western Region</td>
-      <td>A Level or Equivalent</td>
-      <td>30-40%</td>
-      <td>35-55</td>
-      <td>0</td>
-      <td>60</td>
-      <td>Y</td>
-      <td>Withdrawn</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>31604</td>
-      <td>F</td>
-      <td>South East Region</td>
-      <td>A Level or Equivalent</td>
-      <td>50-60%</td>
-      <td>35-55</td>
-      <td>0</td>
-      <td>60</td>
-      <td>N</td>
-      <td>Pass</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>32885</td>
-      <td>F</td>
-      <td>West Midlands Region</td>
-      <td>Lower Than A Level</td>
-      <td>50-60%</td>
-      <td>0-35</td>
-      <td>0</td>
-      <td>60</td>
-      <td>N</td>
-      <td>Pass</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;student_info&#39; is not defined
+</pre></div>
 </div>
-<h4>Contents</h4>
+</div>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><b>code_module</b>: The code module represents the course the student is taking.</p></li>
-<li><p><b>code_presentation</b>: The code presentations are the year and semester the student is taking the course.</p></li>
-<li><p><b>id_student</b>: The student ID is a unique identifier for each student</p></li>
-<li><p><b>gender</b>: The gender represents the binary gender of a student ‘M’ for students who identify as male and ‘F’ for students who identify as female.</p></li>
-<li><p><b>region</b>: Region represents the location of the student when they took the module. All regions are in the UK, Scotland, Ireland or Wales.</p></li>
-<li><p><b>highest_education</b>: Highest education is representative of a students highest level of formal academic achievement.</p>
+<li><p><strong>code_module</strong>: The code module represents the course the student is taking.</p></li>
+<li><p><strong>code_presentation</strong>: The code presentations are the year and semester the student is taking the course.</p></li>
+<li><p><strong>id_student</strong>: The student ID is a unique identifier for each student</p></li>
+<li><p><strong>gender</strong>: The gender represents the binary gender of a student ‘M’ for students who identify as male and ‘F’ for students who identify as female.</p></li>
+<li><p><strong>region</strong>: Region represents the location of the student when they took the module. All regions are in the UK, Scotland, Ireland or Wales.</p></li>
+<li><p><strong>highest_education</strong>: Highest education is representative of a students highest level of formal academic achievement.</p>
 <ul>
 <li><p>Education levels in order from least to most formal education:</p>
 <ul>
@@ -350,12 +288,12 @@
 </li>
 </ul>
 </li>
-<li><p><b>imd_band</b>: The imd_band represents the Indices of multiple deprivation (IMD) score which is a commonly used method in the UK to measure poverty or deprivation in an area. The lower the score, the more ‘deprived’ the area is.</p></li>
-<li><p><b>age_band</b>: There are only three bins for age; 0-35, 35-55 and over 55</p></li>
-<li><p><b>num_of_prev_attempts</b>: The number of times the student has attempted the course previously.</p></li>
-<li><p><b>studied_credits</b>: The number of credits for the module the student is taking.</p></li>
-<li><p><b>disability</b>: Disability status is represented by a binary ‘Y’, yes a student does identify as having a disability and ‘N’, no a student does not identify as having a disability.</p></li>
-<li><p><b>final_results</b>: * The final result is the students overall result in the class.</p>
+<li><p><strong>imd_band</strong>: The imd_band represents the Indices of multiple deprivation (IMD) score which is a commonly used method in the UK to measure poverty or deprivation in an area. The lower the score, the more ‘deprived’ the area is.</p></li>
+<li><p><strong>age_band</strong>: There are only three bins for age; 0-35, 35-55 and over 55</p></li>
+<li><p><strong>num_of_prev_attempts</strong>: The number of times the student has attempted the course previously.</p></li>
+<li><p><strong>studied_credits</strong>: The number of credits for the module the student is taking.</p></li>
+<li><p><strong>disability</strong>: Disability status is represented by a binary ‘Y’, yes a student does identify as having a disability and ‘N’, no a student does not identify as having a disability.</p></li>
+<li><p><strong>final_results</strong>: * The final result is the students overall result in the class.</p>
 <ul>
 <li><p>Possible Results include:</p>
 <ul>
@@ -368,8 +306,11 @@
 </ul>
 </li>
 </ul>
+</div>
 <hr class="docutils" />
-<h4>Student Info Information</h4><div class="cell tag_remove_input docutils container">
+<div class="section" id="student-info-information">
+<h2>Student Info Information<a class="headerlink" href="#student-info-information" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <p><b>Size</b></p>
 <ul class="simple">
@@ -401,7 +342,7 @@ dtype: object
 <ul class="simple">
 <li><p>id_student is currently an int64 datatype, but would be more appropriate as an object data type since it is categorical.</p></li>
 </ul>
-<p><b>Null Values:</b></p>
+<p><strong>Null Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                0
@@ -428,7 +369,7 @@ dtype: int64
 </ul>
 </div>
 </div>
-<p><b>Unique Counts:</b></p>
+<p><strong>Unique Counts:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                 7
@@ -456,7 +397,7 @@ dtype: int64
 </ul>
 </div>
 </div>
-<p><b>Unique Categorical Values</b></p>
+<p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
@@ -503,7 +444,7 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 </div>
 </div>
 </div>
-<p><b>Duplicate Values</b></p>
+<p><strong>Duplicate Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No Duplicate Values&#39;
@@ -511,7 +452,7 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 </div>
 </div>
 </div>
-<p><b>Statistics:</b></p>
+<p><strong>Statistics:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -837,6 +778,8 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 </table>
 </div></div></div>
 </div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -863,6 +806,8 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Courses.html" title="previous page">Courses</a>
+    <a class='right-next' id="next-link" href="Student_Registration.html" title="next page">Student Registration Dataframe</a>
 
         </div>
         

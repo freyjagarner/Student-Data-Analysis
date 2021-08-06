@@ -4,16 +4,12 @@
 # In[1]:
 
 
-from functions import *
-
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
+get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@register_cell_magic\ndef markdown(line, cell):\n    return md(cell.format(**globals()))')
 
 
 # <a id='StudentInfo'></a>
 # 
-# <h2>Student Info and Student Registration Cleaning</h2>
+# # Student Info and Student Registration
 # 
 # ---
 
@@ -24,7 +20,7 @@ def markdown(line, cell):
 # * The dataframe columns can then be reordered to keep relevent data together. 
 # ```
 
-# In[6]:
+# In[2]:
 
 
 # left join and merge student info with student registration
@@ -39,32 +35,32 @@ student_info_reg = student_info_reg[['code_module', 'code_presentation', 'id_stu
 
 # ---
 # 
-# <h4>Student Info Information</h4>
+# ### Student Info Information
 
-# <b>Updated Dataframe</b>
+# **Updated Dataframe**
 
-# In[7]:
+# In[3]:
 
 
 # looking at our now merged dataframe
 student_info_reg.head()
 
 
-# In[8]:
+# In[4]:
 
 
 md(f'''
 
-<b>Size</b>
+**Size**
     
 * Number of Rows: {len(student_info_reg)}
 * Number of Columns: {len(student_info_reg.columns)}
 
-<b>Data Types</b>
+**Data Types**
 ''')
 
 
-# In[9]:
+# In[5]:
 
 
 # show student info data types
@@ -73,16 +69,16 @@ student_info_reg.dtypes
 
 # * id_student is currently an int64 datatype, but would be more appropriate as an object data type since it is categorical.
 
-# In[10]:
+# In[6]:
 
 
 # changing id_student to the object data type
 student_info_reg['id_student'] = student_info_reg['id_student'].astype(object)
 
 
-# <b>Null Values:</b>
+# **Null Values:**
 
-# In[11]:
+# In[7]:
 
 
 student_info_reg.isnull().sum()
@@ -92,17 +88,17 @@ student_info_reg.isnull().sum()
 # * There are 19,809 null values for date_unregistration which represent the students that did not withdraw from the course.
 # * We have 38 null values for date_registration, and no mention of this in the dataset documentation, so we will treat this as missing data.
 
-# <b>Unique Counts:</b>
+# **Unique Counts:**
 
-# In[12]:
+# In[8]:
 
 
 student_info_reg.nunique()
 
 
-# <b>Unique Categorical Values</b>
+# **Unique Categorical Values**
 
-# In[13]:
+# In[9]:
 
 
 unique_vals(student_info_reg)
@@ -110,7 +106,7 @@ unique_vals(student_info_reg)
 
 # In imd_band the % sign is missing in 10-20. We will add that for consistency and clarity
 
-# In[14]:
+# In[10]:
 
 
 # changing all 10-20 values in student_info imd_band to 10-20% for consistency's sake
@@ -118,15 +114,15 @@ student_info.loc[student_info['imd_band'] == '10-20', 'imd_band'] = '10-20%'
 print(student_info['imd_band'].explode().unique())
 
 
-# <b>Duplicate Values</b>
+# **Duplicate Values**
 
-# In[15]:
+# In[11]:
 
 
 analyze_df(student_info_reg, dupes=True)
 
 
-# In[16]:
+# In[12]:
 
 
 md(f'''* The Student info dataframe is {len(student_info_reg)} rows, but there are only {student_info_reg['id_student'].nunique()} unique student ID's.
@@ -134,37 +130,37 @@ md(f'''* The Student info dataframe is {len(student_info_reg)} rows, but there a
         ''')
 
 
-# In[17]:
+# In[13]:
 
 
 student_info_reg[student_info_reg['id_student'].duplicated()].head()
 
 
-# <b>Duplicate Student ID's</b>
+# **Duplicate Student ID's**
 
-# In[18]:
+# In[14]:
 
 
 # finding student records with duplicate ID's
 pd.concat(x for _, x in student_info_reg.groupby("id_student") if len(x) > 1).head()
 
 
-# In[19]:
+# In[15]:
 
 
 duped_sids = student_info_reg[student_info_reg['id_student'].duplicated()]
 total_sid_dupes = pd.concat(x for _, x in student_info_reg.groupby("id_student") if len(x) > 1)
 
 
-# In[20]:
+# In[16]:
 
 
 md(f'''We have {len(duped_sids)} students whose ID is listed more than once and a total of {len(total_sid_dupes)} duplicate records. These students do seem to be in different courses, and so we will leave them''')
 
 
-# <b>Statistics:</b>
+# **Statistics:**
 
-# In[21]:
+# In[17]:
 
 
 student_info_reg.describe().astype(int)
@@ -173,7 +169,7 @@ student_info_reg.describe().astype(int)
 # * There are 8,612 values for the count of date_unregistration which represents the number of students who withdrew from the course.
 # * The earliest date_unregistration date is 274 days before the course began, which means these students did not make it to the first day. We are only interested in students who took the course so we must eliminate students who did not attend.
 
-# In[22]:
+# In[18]:
 
 
 # removing students who withdrew on or before the first day
@@ -181,19 +177,19 @@ student_info_reg = student_info_reg.drop(student_info_reg[(student_info_reg['dat
 student_info_reg.reset_index(drop=True).head()
 
 
-# In[23]:
+# In[22]:
 
 
 # finds the longest module length in courses and prints it
 longest_course = courses['module_presentation_length'].max()
-longest_unreg = student_info_reg['date_unregistration'].max().astype(int)
+longest_unreg = int(student_info_reg['date_unregistration'].max())
 md(f'''* The longest course from module_presentation length in the courses dataframe was {longest_course} days, yet we see here the latest unregistration date is {longest_unreg} days, which is longer than any course went on.
     ''')
 
 
-# <b>All Students with an unregistration point after 269 days:</b>
+# **All Students with an unregistration point after 269 days:**
 
-# In[24]:
+# In[23]:
 
 
 # finding students whose courses went on for longer than the maximum course length

@@ -5,7 +5,6 @@ import os
 from sklearn import linear_model
 import seaborn as sns
 import itertools
-from varname.helpers import Wrapper
 import matplotlib.pyplot as plt
 from IPython.display import Markdown as md
 from IPython.core.magic import register_cell_magic

@@ -4,52 +4,40 @@
 # In[1]:
 
 
-from functions import *
-
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
-
-("")
+get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@register_cell_magic\ndef markdown(line, cell):\n    return md(cell.format(**globals()))')
 
 
-# ---
+# # Assessments
 # 
-# <h2>Assessments Dataframe</h2>
-
 # The assessments dataframe contains information about the unique assessments in each code module and presentation.
 
-# In[17]:
-
-
-assessments.head()
-
+# assessments.head()
 
 # ---
 # 
-# <h4>Assessments Contents</h4>
+# ### Assessments Contents
 # 
-# * <b>code_module</b>: The code module represents the code name of the course the assessment was held for.
-# * <b>code_presentation</b>: The presentation represents the presentation which the test was held for.
-# * <b>id_assessment</b>: The assessment ID is the unique identifier for each assessment.
-# * <b>assessment_type</b>: The assessment type represents the kind of assessment it was.
+# * **code_module**: The code module represents the code name of the course the assessment was held for.
+# * **code_presentation**: The presentation represents the presentation which the test was held for.
+# * **id_assessment**: The assessment ID is the unique identifier for each assessment.
+# * **assessment_type**: The assessment type represents the kind of assessment it was.
 #     - There are three assessment types:
 #         * TMA: Tutor Marked Assessment
 #         * CMA: Computer Marked Assessment
 #         * Exam: The Final Exam
-# * <b>date</b>: The date is how many days from the start of the course the assessment took place
-# * <b>weight</b>: The weight is the weighted value of the assessment. Exams should have a weight of 100 which the rest of the assessments should add to 100 in total.
+# * **date**: The date is how many days from the start of the course the assessment took place
+# * **weight**: The weight is the weighted value of the assessment. Exams should have a weight of 100 which the rest of the assessments should add to 100 in total.
 
-# <b>Size</b>
+# **Size**
 
-# In[18]:
+# In[2]:
 
 
 md(f'''* Number of Rows: {len(assessments)}
 * Number of Columns: {len(assessments.columns)}''')
 
 
-# <b>Data Types</b>
+# **Data Types**
 
 # In[19]:
 
@@ -67,7 +55,7 @@ assessments = assessments.astype({'id_assessment': int})
 assessments = assessments.astype({'id_assessment': object})
 
 
-# <b>Null Values</b>
+# **Null Values**
 
 # In[24]:
 
@@ -91,7 +79,7 @@ assessments.isnull().sum()
 
 # * There are 173 null values for score. These records are, unfortunately not of much interest to us, since score is what we are trying to find the relationship for, and so we will discard them. This leaves us with no null data in assessments.
 
-# <b>Unique Counts</b>
+# **Unique Counts**
 
 # In[27]:
 
@@ -99,7 +87,7 @@ assessments.isnull().sum()
 assessments.nunique()
 
 
-# <b>Unique Categorical Values</b>
+# **Unique Categorical Values**
 
 # In[30]:
 
@@ -107,7 +95,7 @@ assessments.nunique()
 unique_vals(assessments)
 
 
-# <b>Duplicate Values:</b>
+# **Duplicate Values:**
 
 # In[32]:
 
@@ -115,7 +103,7 @@ unique_vals(assessments)
 duplicate_vals(assessments)
 
 
-# <b>Statistics</b>
+# **Statistics**
 
 # In[34]:
 

@@ -4,28 +4,24 @@
 # In[1]:
 
 
-from functions import *
-
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
+get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@register_cell_magic\ndef markdown(line, cell):\n    return md(cell.format(**globals()))')
 
 
-# <h2>Student Registration Dataframe</h2>
+# # Student Registration Dataframe
 
 # ---
 # The student registration dataframe contains information about the dates that students registered and,if applicable, unregistered from the module.
 # 
-# <h4>Contents</h4>
+# ### Contents
 # 
-# * <b>code_module</b>: The code module represents the course which the sutdent registered for.
-# * <b>code_presentation</b>: The code presentation represents the time of year the course which the student registered for began.
-# * <b>id_student</b>: The student ID is the unique identifier for each student.
-# * <b>date_registration</b>: The registration date is the date that the student registered for the module relative to the start of the module. A negative value indicates that many days before the module began.
-# * <b>date_unregistration</b>: The unregistration date is the date that the student unregistered from the course module in relation to the start date of the course, if applicable.
+# * **code_module**: The code module represents the course which the sutdent registered for.
+# * **code_presentation**: The code presentation represents the time of year the course which the student registered for began.
+# * **id_student**: The student ID is the unique identifier for each student.
+# * **date_registration**: The registration date is the date that the student registered for the module relative to the start of the module. A negative value indicates that many days before the module began.
+# * **date_unregistration**: The unregistration date is the date that the student unregistered from the course module in relation to the start date of the course, if applicable.
 # 
 
-# In[3]:
+# In[2]:
 
 
 # looking at the student_registration dataframe
@@ -37,12 +33,12 @@ student_registration.head()
 
 md(f'''
 
-<b>Size</b>
+**Size**
     
 * Number of Rows: {len(student_registration)}
 * Number of Columns: {len(student_registration.columns)}
 
-<b>Data Types</b>
+**Data Types**
 ''')
 
 
@@ -62,7 +58,7 @@ student_registration.dtypes
 student_registration['id_student'] = student_registration['id_student'].astype(object)
 
 
-# <b>Null Values:</b>
+# **Null Values:**
 
 # In[8]:
 
@@ -83,7 +79,7 @@ null_unregistration = student_registration['date_unregistration'].isnull().sum()
 get_ipython().run_cell_magic('markdown', '', '\n* We have {null_registration} null values for date_registration, and no mention of this in the dataset documentation, so we will treat this as missing data.\n* There are {null_unregistration} null values for date_unregistration which represent the students that did not withdraw from the course.')
 
 
-# <b>Unique Counts:</b>
+# **Unique Counts:**
 
 # In[17]:
 
@@ -91,7 +87,7 @@ get_ipython().run_cell_magic('markdown', '', '\n* We have {null_registration} nu
 student_registration.nunique()
 
 
-# <b>Unique Categorical Values</b>
+# **Unique Categorical Values**
 
 # In[18]:
 
@@ -109,7 +105,7 @@ student_info.loc[student_info['imd_band'] == '10-20', 'imd_band'] = '10-20%'
 print(student_info['imd_band'].explode().unique())
 
 
-# <b>Duplicate Values</b>
+# **Duplicate Values**
 
 # In[56]:
 
@@ -131,7 +127,7 @@ md(f'''* The Student info dataframe is {len(student_registration)} rows, but the
 student_registration[student_registration['id_student'].duplicated()].head()
 
 
-# <b>Duplicate Student ID's</b>
+# **Duplicate Student ID's**
 
 # In[61]:
 
@@ -153,7 +149,7 @@ total_sid_dupes = pd.concat(x for _, x in student_registration.groupby("id_stude
 md(f'''We have {len(duped_sids)} students whose ID is listed more than once and a total of {len(total_sid_dupes)} duplicate records. These students do seem to be in different courses, and so we will leave them''')
 
 
-# <b>Statistics:</b>
+# **Statistics:**
 
 # In[40]:
 
@@ -182,7 +178,7 @@ md(f'''* The longest course from module_presentation length in the courses dataf
     ''')
 
 
-# <b>All Students with an unregistration point after 269 days:</b>
+# **All Students with an unregistration point after 269 days:**
 
 # In[47]:
 

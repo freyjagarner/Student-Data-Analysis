@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>Courses &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Student Info" href="Student_Info.html" />
     <link rel="prev" title="Student Success Analysis and Prediction" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -89,15 +89,40 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Courses
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Info.html">
+   Student Info
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Registration.html">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Assessment.html">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VLE.html">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -203,7 +228,29 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general">
+   General
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contents">
+     Contents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#courses-information">
+     Courses Information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modules-and-presentations">
+     Modules and Presentations
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -219,7 +266,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_596</span><span class="o">/</span><span class="mf">1642215727.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_23216</span><span class="o">/</span><span class="mf">1642215727.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@register_cell_magic</span>
@@ -238,11 +285,12 @@
 </div>
 </div>
 </div>
-<p><a id='Courses'></a></p>
+<div class="section" id="courses">
+<h1>Courses<a class="headerlink" href="#courses" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
-<h2>Courses Dataframe</h2>
-<hr class="docutils" />
-<p>The courses datframe has information for all modules and their presentations.</p>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<p>The courses dataframe has information for all modules and their presentations.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -304,23 +352,27 @@
 </div></div></div>
 </div>
 <hr class="docutils" />
-<h4>Contents</h4>
+<div class="section" id="contents">
+<h3>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><b>code_module</b>: The code module represents the code name of the course. Modules are identified with three capital letters which run sequentially between AAA and GGG</p></li>
-<li><p><b>code_presentation</b>: The presentations are codified by their year and offering semester. B is for February and J is for October. 2013B for example is February of 2013.</p></li>
-<li><p><b>mode_presentation_length</b>: The module presentation length is the length of the course in days.</p></li>
+<li><p><strong>code_module</strong>: The code module represents the code name of the course. Modules are identified with three capital letters which run sequentially between AAA and GGG</p></li>
+<li><p><strong>code_presentation</strong>: The presentations are codified by their year and offering semester. B is for February and J is for October. 2013B for example is February of 2013.</p></li>
+<li><p><strong>mode_presentation_length</strong>: The module presentation length is the length of the course in days.</p></li>
 </ul>
+</div>
 <hr class="docutils" />
-<h4>Courses Information</h4><div class="cell tag_remove_input docutils container">
+<div class="section" id="courses-information">
+<h3>Courses Information<a class="headerlink" href="#courses-information" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove_input docutils container">
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<p><b>Size</b></p>
+<p><strong>Size</strong></p>
 <ul class="simple">
 <li><p>Number of Rows: 22</p></li>
 <li><p>Number of Columns: 3</p></li>
 </ul>
-<p><b>Data Types</b></p>
+<p><strong>Data Types</strong></p>
 </div>
 </div>
 <div class="cell docutils container">
@@ -338,7 +390,7 @@ dtype: object
 </div>
 </div>
 </div>
-<p><b>Null Values:</b></p>
+<p><strong>Null Values:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">courses_nulls</span>
@@ -346,7 +398,7 @@ dtype: object
 </div>
 </div>
 </div>
-<p><b>Unique Counts:</b></p>
+<p><strong>Unique Counts:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                   7
@@ -357,7 +409,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p><b>Unique Categorical Values</b>:</p>
+<p><strong>Unique Categorical Values</strong>:</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
@@ -367,7 +419,7 @@ code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#
 </div>
 </div>
 </div>
-<p><b>Duplicate Values</b></p>
+<p><strong>Duplicate Values</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analyze_df</span><span class="p">(</span><span class="n">courses</span><span class="p">,</span> <span class="n">dupes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -380,7 +432,7 @@ code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#
 </div>
 </div>
 </div>
-<p><b>Statistics:</b></p>
+<p><strong>Statistics:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -441,8 +493,11 @@ code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#
 </table>
 </div></div></div>
 </div>
+</div>
 <hr class="docutils" />
-<h4>Modules and Presentations</h4><div class="cell tag_remove_input docutils container">
+<div class="section" id="modules-and-presentations">
+<h3>Modules and Presentations<a class="headerlink" href="#modules-and-presentations" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <ul class="simple">
 <li><p>There are 7 unique modules delivered over 4 presentations as detailed below:</p></li>
@@ -539,12 +594,13 @@ code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <hr class="docutils" />
-<h4>Module Presentation Length</h4>
-<ul class="simple">
-<li><p>There are 7 modules and 4 presentations.</p></li>
-<li><p>Modules range from 234 to 269 days in length.</p></li>
-<li><p>The average module is 255.5 days.</p></li>
-</ul>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">C:\Users\Freyja\Documents\GitHub\WGU-BS-Data-Analytics-Capstone\Capstone\Courses.ipynb</span>, line 4)</p>
+<p>Non-consecutive header level increase; 0 to 3 [myst.header]</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -574,7 +630,7 @@ code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Student Success Analysis and Prediction</a>
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">Markdown Files</a>
+    <a class='right-next' id="next-link" href="Student_Info.html" title="next page">Student Info</a>
 
         </div>
         

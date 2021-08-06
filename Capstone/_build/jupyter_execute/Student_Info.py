@@ -4,14 +4,10 @@
 # In[1]:
 
 
-from functions import *
-
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
+get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@register_cell_magic\ndef markdown(line, cell):\n    return md(cell.format(**globals()))')
 
 
-# <h2>Student Info Dataframe</h2>
+# # Student Info
 # 
 # ---
 
@@ -24,26 +20,26 @@ def markdown(line, cell):
 student_info.head()
 
 
-# <h4>Contents</h4>
+# ### Contents
 # 
-# * <b>code_module</b>: The code module represents the course the student is taking.
-# * <b>code_presentation</b>: The code presentations are the year and semester the student is taking the course.
-# * <b>id_student</b>: The student ID is a unique identifier for each student
-# * <b>gender</b>: The gender represents the binary gender of a student 'M' for students who identify as male and 'F' for students who identify as female.
-# * <b>region</b>: Region represents the location of the student when they took the module. All regions are in the UK, Scotland, Ireland or Wales.
-# * <b>highest_education</b>: Highest education is representative of a students highest level of formal academic achievement.
+# * **code_module**: The code module represents the course the student is taking.
+# * **code_presentation**: The code presentations are the year and semester the student is taking the course.
+# * **id_student**: The student ID is a unique identifier for each student
+# * **gender**: The gender represents the binary gender of a student 'M' for students who identify as male and 'F' for students who identify as female.
+# * **region**: Region represents the location of the student when they took the module. All regions are in the UK, Scotland, Ireland or Wales.
+# * **highest_education**: Highest education is representative of a students highest level of formal academic achievement.
 #     - Education levels in order from least to most formal education: 
 #         - No formal quals (qualifications)
 #         - Lower than A Level which is nearly but not quite analagous to under high school level
 #         - A Level or equivalent which is again nearly analagous to high school level, but more like college ready
 #         - HE Qualification which stands for higher education qualification
 #         - Post Graduate Qualification
-# * <b>imd_band</b>: The imd_band represents the Indices of multiple deprivation (IMD) score which is a commonly used method in the UK to measure poverty or deprivation in an area. The lower the score, the more 'deprived' the area is.
-# * <b>age_band</b>: There are only three bins for age; 0-35, 35-55 and over 55
-# * <b>num_of_prev_attempts</b>: The number of times the student has attempted the course previously.
-# * <b>studied_credits</b>: The number of credits for the module the student is taking.
-# * <b>disability</b>: Disability status is represented by a binary 'Y', yes a student does identify as having a disability and 'N', no a student does not identify as having a disability.
-# * <b>final_results</b>: * The final result is the students overall result in the class.
+# * **imd_band**: The imd_band represents the Indices of multiple deprivation (IMD) score which is a commonly used method in the UK to measure poverty or deprivation in an area. The lower the score, the more 'deprived' the area is.
+# * **age_band**: There are only three bins for age; 0-35, 35-55 and over 55
+# * **num_of_prev_attempts**: The number of times the student has attempted the course previously.
+# * **studied_credits**: The number of credits for the module the student is taking.
+# * **disability**: Disability status is represented by a binary 'Y', yes a student does identify as having a disability and 'N', no a student does not identify as having a disability.
+# * **final_results**: * The final result is the students overall result in the class.
 #     - Possible Results include:
 #          - Pass: The student passed the course
 #          - Fail: The student did not pass the course
@@ -52,19 +48,19 @@ student_info.head()
 
 # ---
 # 
-# <h4>Student Info Information</h4>
+# ### Student Info Information
 
 # In[3]:
 
 
 md(f'''
 
-<b>Size</b>
+**Size**
     
 * Number of Rows: {len(student_info)}
 * Number of Columns: {len(student_info.columns)}
 
-<b>Data Types</b>
+**Data Types**
 ''')
 
 
@@ -84,7 +80,7 @@ student_info.dtypes
 student_info['id_student'] = student_info['id_student'].astype(object)
 
 
-# <b>Null Values:</b>
+# **Null Values:**
 
 # In[6]:
 
@@ -104,7 +100,7 @@ imd_null = student_info['imd_band'].isnull().sum()
 get_ipython().run_cell_magic('markdown', '', '\n* The imd_band variable has {imd_null} null values which we may have to work around. ')
 
 
-# <b>Unique Counts:</b>
+# **Unique Counts:**
 
 # In[9]:
 
@@ -125,7 +121,7 @@ unique_students = student_info['id_student'].nunique()
 get_ipython().run_cell_magic('markdown', '', '\n* There are {total_students} entries for students but only {unique_students} unique student IDs.\n* This may represent students who have taken the course more than once or who are taking multiple modules')
 
 
-# <b>Unique Categorical Values</b>
+# **Unique Categorical Values**
 
 # In[12]:
 
@@ -143,7 +139,7 @@ student_info.loc[student_info['imd_band'] == '10-20', 'imd_band'] = '10-20%'
 print(student_info['imd_band'].explode().unique())
 
 
-# <b>Duplicate Values</b>
+# **Duplicate Values**
 
 # In[14]:
 
@@ -151,7 +147,7 @@ print(student_info['imd_band'].explode().unique())
 analyze_df(student_info, dupes=True)
 
 
-# <b>Statistics:</b>
+# **Statistics:**
 
 # In[15]:
 

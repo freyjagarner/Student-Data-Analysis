@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>VLE and Student VLE Dataframes &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Student Assessments" href="Student_Assessment.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,15 +88,40 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Courses.html">
+   Courses
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Info.html">
+   Student Info
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Registration.html">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Assessment.html">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -201,7 +227,36 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vle">
+   VLE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vle-contents">
+     VLE Contents
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-vle">
+   Student VLE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-vle-contents">
+     Student VLE Contents
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merged-vle-and-student-vle-dataframe">
+     Merged VLE and Student VLE Dataframe
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -214,107 +269,48 @@
               <div>
                 
   <hr class="docutils" />
-<h2>VLE and Student VLE Dataframes</h2><hr class="docutils" />
-<h3>VLE</h3>
+<div class="section" id="vle-and-student-vle-dataframes">
+<h1>VLE and Student VLE Dataframes<a class="headerlink" href="#vle-and-student-vle-dataframes" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="vle">
+<h2>VLE<a class="headerlink" href="#vle" title="Permalink to this headline">¶</a></h2>
 <p>The VLE dataframe contains information about materials available on the Virtual Learning Environment.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12472</span><span class="o">/</span><span class="mf">1735601912.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">vle</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id_site</th>
-      <th>code_module</th>
-      <th>code_presentation</th>
-      <th>activity_type</th>
-      <th>week_from</th>
-      <th>week_to</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>546943</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>resource</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>546712</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>oucontent</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>546998</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>resource</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>546888</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>url</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>547035</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>resource</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;vle&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <hr class="docutils" />
-<h4>VLE Contents</h4>
+<div class="section" id="vle-contents">
+<h3>VLE Contents<a class="headerlink" href="#vle-contents" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><b>id_site</b>: The site ID is the unique identifier for the online resource.</p></li>
-<li><p><b>code_module</b>: The code module is the module the resource is associated with.</p></li>
-<li><p><b>code_presentation</b>: The code presentation represents the time the module was held at.</p></li>
-<li><p><b>activity_type</b>: The activity type is the type of online material.</p></li>
-<li><p><b>week_from</b>: The week from is the week the material was intended to be used from.</p>
+<li><p><strong>id_site</strong>: The site ID is the unique identifier for the online resource.</p></li>
+<li><p><strong>code_module</strong>: The code module is the module the resource is associated with.</p></li>
+<li><p><strong>code_presentation</strong>: The code presentation represents the time the module was held at.</p></li>
+<li><p><strong>activity_type</strong>: The activity type is the type of online material.</p></li>
+<li><p><strong>week_from</strong>: The week from is the week the material was intended to be used from.</p>
 <ul>
 <li><p>week_from will not be used in our analysis due to it being irrelevant information and will be dropped.</p></li>
 </ul>
 </li>
-<li><p><b>week_to</b>: The week to is the week the material was intended to be used until.</p>
+<li><p><strong>week_to</strong>: The week to is the week the material was intended to be used until.</p>
 <ul>
 <li><p>week_to will not be used in our analysis due to it being irrelevant information and will be dropped.</p></li>
 </ul>
 </li>
 </ul>
+</div>
+</div>
 <hr class="docutils" />
-<h4>Student VLE</h4>
+<div class="section" id="student-vle">
+<h2>Student VLE<a class="headerlink" href="#student-vle" title="Permalink to this headline">¶</a></h2>
 <p>The Student VLE Dataframe contains information about student interactions with the online resources in the Virtual Learning Environment.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -395,19 +391,23 @@
 </div></div></div>
 </div>
 <hr class="docutils" />
-<h4>Student VLE Contents</h4>
+<div class="section" id="student-vle-contents">
+<h3>Student VLE Contents<a class="headerlink" href="#student-vle-contents" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><b>code_module</b>: The code module is the module the resource and student are associated with.</p></li>
-<li><p><b>code_presentation</b>: The code presentation represents the time the module was held at.</p></li>
-<li><p><b>id_site</b>: The site ID is the unique identifier for the online resource with which the student engaged.</p></li>
-<li><p><b>date</b>: The date represents the date that the student engaged with the material relevant to the start date of the module.</p></li>
-<li><p><b>sum_click</b>: The sum click represents the number of clicks the student made on that day.</p></li>
+<li><p><strong>code_module</strong>: The code module is the module the resource and student are associated with.</p></li>
+<li><p><strong>code_presentation</strong>: The code presentation represents the time the module was held at.</p></li>
+<li><p><strong>id_site</strong>: The site ID is the unique identifier for the online resource with which the student engaged.</p></li>
+<li><p><strong>date</strong>: The date represents the date that the student engaged with the material relevant to the start date of the module.</p></li>
+<li><p><strong>sum_click</strong>: The sum click represents the number of clicks the student made on that day.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since we are only interested in information that is pertinent to the student, we will be merging the VLE and Student VLE dataframes to have only the relevant information of each.</p>
 </div>
-<h4>Merged VLE and Student VLE Dataframe</h4><div class="cell docutils container">
+</div>
+<div class="section" id="merged-vle-and-student-vle-dataframe">
+<h3>Merged VLE and Student VLE Dataframe<a class="headerlink" href="#merged-vle-and-student-vle-dataframe" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># merging vle &amp; student vle with a full outer join on common columns</span>
 <span class="n">merged_vle</span> <span class="o">=</span> <span class="n">student_vle</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">vle</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id_site&#39;</span><span class="p">,</span> <span class="s1">&#39;code_module&#39;</span><span class="p">,</span> <span class="s1">&#39;code_presentation&#39;</span><span class="p">],</span><span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -680,16 +680,16 @@
 </table>
 </div></div></div>
 </div>
-<p><b>Aggregating Clicks</b></p>
+<p><strong>Aggregating Clicks</strong></p>
 <ul class="simple">
 <li><p>For this analysis we will only be using the sum of the students clicks throughout the course, and so we must add each days clicks per student.</p></li>
 </ul>
-<p><b>Number of activity types</b></p>
+<p><strong>Number of activity types</strong></p>
 <ul class="simple">
 <li><p>We are going to remove activity_type for now. If sum_clicks overall ends up being a good predictor of how a student does, we will add it back.</p></li>
 <li><p>We will remove id_site for now since it does not add any information to the resource it maps to.</p></li>
 </ul>
-<p><b>VLE with clicks per student per module aggregated</b></p>
+<p><strong>VLE with clicks per student per module aggregated</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
 <div class="cell docutils container">
@@ -699,9 +699,9 @@
 </div>
 </div>
 </div>
-<p><b>Merge with Student Info Dataframe</b></p>
+<p><strong>Merge with Student Info Dataframe</strong></p>
 <p>Finally, we will merge the merged VLE dataframe with the Student info dataframe to ensure wwe are only working with students who were not previously eliminated due to dropping out before the first day or for being on higher than their first attempt</p>
-<p><b>Merged VLE and Student Info Dataframes</b></p>
+<p><strong>Merged VLE and Student Info Dataframes</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># outer merge of stud_info and vle dataframes on common columns</span>
@@ -1430,7 +1430,7 @@ We can drop both of these which are missing values for the purpose of this dataf
 <p>22951 rows × 11 columns</p>
 </div></div></div>
 </div>
-<p><b>Merge with Assessments Dataframe</b></p>
+<p><strong>Merge with Assessments Dataframe</strong></p>
 <p>Finally we will be creating a merged dataframe of the the merged vle and student info and assessments dataframes. This is so that we can attempt to predict scores based on number of clicks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1959,7 +1959,7 @@ We can drop both of these which are missing values for the purpose of this dataf
 <p>3228 rows × 5 columns</p>
 </div></div></div>
 </div>
-<p><b>Data Types:</b></p>
+<p><strong>Data Types:</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]</span> <span class="o">==</span><span class="mf">8462.0</span><span class="p">]</span>
@@ -2328,6 +2328,9 @@ dtype: object
 <p>206 rows × 6 columns</p>
 </div></div></div>
 </div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -2354,6 +2357,7 @@ dtype: object
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Student_Assessment.html" title="previous page">Student Assessments</a>
 
         </div>
         

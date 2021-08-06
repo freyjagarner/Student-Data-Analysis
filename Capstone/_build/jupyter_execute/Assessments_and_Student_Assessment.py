@@ -4,26 +4,27 @@
 # In[1]:
 
 
-from ipynb.fs.full.Student_Info_and_Registration import student_info_reg
-from functions import *
-
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
-
-("")
-
-import timeit
-from collections import OrderedDict
+get_ipython().run_cell_magic('capture', '', 'from ipynb.fs.full.Student_Info_and_Registration import student_info_reg\nfrom functions import *\n\n@register_cell_magic\ndef markdown(line, cell):\n    return md(cell.format(**globals()))\n\nimport timeit\nfrom collections import OrderedDict')
 
 
 # ---
 # 
-# <h2>Assessments and Student Assessments Dataframes</h2>
+# # Assessments and Student Assessments
+# ---
+
+# 
+
+# In[1]:
+
+
+
+
+
+# 
 
 # ---
 # 
-# <h4>Assessments and Student Assessments Merged Dataframe:</h4>
+# ### Assessments and Student Assessments Merged Dataframe:
 
 # In[2]:
 
@@ -36,7 +37,7 @@ merged_assessments.head()
 
 # * Our new merge column tells us if the data maps perfectly, or if it is only found on the right or left side, the right side being the assessments dataframe and the left side being the student_assessments dataframe
 
-# <b>Rows that do not map:</b>
+# **Rows that do not map:**
 
 # In[3]:
 
@@ -75,9 +76,9 @@ merged_assessments = merged_assessments.drop(columns=['_merge']).reset_index(dro
 merged_assessments = merged_assessments[['code_module', 'code_presentation', 'id_student', 'id_assessment', 'assessment_type', 'date_submitted', 'date', 'weight', 'score']]
 
 
-# <b>Removing Eliminated Students</b>
+# **Removing Eliminated Students**
 
-# <b>Merged Assessment/Student_info dataframes</b>
+# **Merged Assessment/Student_info dataframes**
 
 # In order to remove the students that we removed for the number of previous attempts, we must merge assessments and student info and find the difference
 
@@ -99,7 +100,7 @@ only_assessments = merged_si_assm.loc[merged_si_assm['_merge']=='left_only']
 only_student_info = merged_si_assm.loc[merged_si_assm['_merge']=='right_only']
 
 
-# <b>Assessments that do not map to students</b>:
+# **Assessments that do not map to students**:
 
 # In[10]:
 
@@ -107,7 +108,7 @@ only_student_info = merged_si_assm.loc[merged_si_assm['_merge']=='right_only']
 only_assessments.head()
 
 
-# <b>Students without any test scores<b>:
+# **Students without any test scores**:
 
 # In[11]:
 
@@ -180,7 +181,7 @@ cleaned_assessments = merged_si_assm
 
 # ---
 # 
-# <h4>Testing Area
+# ### Testing Area
 
 # In[19]:
 
@@ -525,9 +526,9 @@ while count < 1:
 pd.DataFrame(merged_assessments.loc[merged_assessments['id_student'] == 11391, 'id_assessment'])
 
 
-# <b>Updated Dataframe</b>
+# **Updated Dataframe**
 
-# <b>Size</b>
+# **Size**
 
 # In[ ]:
 
@@ -536,7 +537,7 @@ md(f'''* Number of Rows: {len(merged_assessments)}
 * Number of Columns: {len(merged_assessments.columns)}''')
 
 
-# <b>Data Types</b>
+# **Data Types**
 
 # In[ ]:
 
@@ -554,7 +555,7 @@ merged_assessments = merged_assessments.astype({'id_assessment': int, 'id_studen
 merged_assessments = merged_assessments.astype({'id_assessment': object, 'id_student': object})
 
 
-# <b>Null Values</b>
+# **Null Values**
 
 # In[ ]:
 
@@ -588,7 +589,7 @@ merged_assessments = merged_assessments.dropna(subset=['score'])
 merged_assessments.isnull().sum()
 
 
-# <b>Unique Counts</b>
+# **Unique Counts**
 
 # In[ ]:
 
@@ -596,7 +597,7 @@ merged_assessments.isnull().sum()
 cleaned_assessments.nunique()
 
 
-# <b>Unique Categorical Values</b>
+# **Unique Categorical Values**
 
 # In[ ]:
 
@@ -604,7 +605,7 @@ cleaned_assessments.nunique()
 unique_vals(cleaned_assessments)
 
 
-# <b>Duplicate Values:</b>
+# **Duplicate Values:**
 
 # In[ ]:
 
@@ -612,7 +613,7 @@ unique_vals(cleaned_assessments)
 duplicate_vals(cleaned_assessments)
 
 
-# <b>Statistics</b>
+# **Statistics**
 
 # In[ ]:
 

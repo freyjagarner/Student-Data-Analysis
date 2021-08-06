@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>Student Registration Dataframe &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assessments" href="Assessments.html" />
+    <link rel="prev" title="Student Info" href="Student_Info.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,15 +89,40 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Courses.html">
+   Courses
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Info.html">
+   Student Info
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Assessment.html">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VLE.html">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -201,7 +228,12 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contents">
+   Contents
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -213,15 +245,18 @@
         
               <div>
                 
-  <h2>Student Registration Dataframe</h2><hr class="docutils" />
+  <div class="section" id="student-registration-dataframe">
+<h1>Student Registration Dataframe<a class="headerlink" href="#student-registration-dataframe" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
 <p>The student registration dataframe contains information about the dates that students registered and,if applicable, unregistered from the module.</p>
-<h4>Contents</h4>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><b>code_module</b>: The code module represents the course which the sutdent registered for.</p></li>
-<li><p><b>code_presentation</b>: The code presentation represents the time of year the course which the student registered for began.</p></li>
-<li><p><b>id_student</b>: The student ID is the unique identifier for each student.</p></li>
-<li><p><b>date_registration</b>: The registration date is the date that the student registered for the module relative to the start of the module. A negative value indicates that many days before the module began.</p></li>
-<li><p><b>date_unregistration</b>: The unregistration date is the date that the student unregistered from the course module in relation to the start date of the course, if applicable.</p></li>
+<li><p><strong>code_module</strong>: The code module represents the course which the sutdent registered for.</p></li>
+<li><p><strong>code_presentation</strong>: The code presentation represents the time of year the course which the student registered for began.</p></li>
+<li><p><strong>id_student</strong>: The student ID is the unique identifier for each student.</p></li>
+<li><p><strong>date_registration</strong>: The registration date is the date that the student registered for the module relative to the start of the module. A negative value indicates that many days before the module began.</p></li>
+<li><p><strong>date_unregistration</strong>: The unregistration date is the date that the student unregistered from the course module in relation to the start date of the course, if applicable.</p></li>
 </ul>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -250,7 +285,7 @@ dtype: object
 </ul>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Null Values:</b></p>
+<p><strong>Null Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                0
@@ -271,7 +306,7 @@ dtype: int64
 </ul>
 </div>
 </div>
-<p><b>Unique Counts:</b></p>
+<p><strong>Unique Counts:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                7
@@ -284,7 +319,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p><b>Unique Categorical Values</b></p>
+<p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
@@ -312,7 +347,7 @@ id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
 </div>
 </div>
 </div>
-<p><b>Duplicate Values</b></p>
+<p><strong>Duplicate Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No Duplicate Values&#39;
@@ -454,7 +489,7 @@ id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
 </table>
 </div></div></div>
 </div>
-<p><b>Duplicate Student ID’s</b></p>
+<p><strong>Duplicate Student ID’s</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># finding student records with duplicate ID&#39;s</span>
@@ -593,7 +628,7 @@ id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
 <p>We have 2325 students whose ID is listed more than once and a total of 4636 duplicate records. These students do seem to be in different courses, and so we will leave them</p>
 </div>
 </div>
-<p><b>Statistics:</b></p>
+<p><strong>Statistics:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -788,7 +823,7 @@ id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
 </ul>
 </div>
 </div>
-<p><b>All Students with an unregistration point after 269 days:</b></p>
+<p><strong>All Students with an unregistration point after 269 days:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -846,6 +881,8 @@ id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
 <ul class="simple">
 <li><p>It seems to be just this one student is an outlier, but should not affect our overall analysis so we will leave this intact</p></li>
 </ul>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -872,6 +909,8 @@ id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Student_Info.html" title="previous page">Student Info</a>
+    <a class='right-next' id="next-link" href="Assessments.html" title="next page">Assessments</a>
 
         </div>
         

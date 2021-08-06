@@ -11,17 +11,15 @@ def markdown(line, cell):
     return md(cell.format(**globals()))
 
 
-# <a id='Courses'></a>
-# 
-# ---
-# 
-# <h2>Courses Dataframe</h2>
+# # Courses
 # 
 # ---
 
-# The courses datframe has information for all modules and their presentations.
+# ## General
 
-# In[3]:
+# The courses dataframe has information for all modules and their presentations.
+
+# In[10]:
 
 
 courses.head()
@@ -29,17 +27,17 @@ courses.head()
 
 # ---
 # 
-# <h4>Contents</h4>
+# ### Contents
 # 
-# * <b>code_module</b>: The code module represents the code name of the course. Modules are identified with three capital letters which run sequentially between AAA and GGG
-# * <b>code_presentation</b>: The presentations are codified by their year and offering semester. B is for February and J is for October. 2013B for example is February of 2013. 
-# * <b>mode_presentation_length</b>: The module presentation length is the length of the course in days.
+# * **code_module**: The code module represents the code name of the course. Modules are identified with three capital letters which run sequentially between AAA and GGG
+# * **code_presentation**: The presentations are codified by their year and offering semester. B is for February and J is for October. 2013B for example is February of 2013. 
+# * **mode_presentation_length**: The module presentation length is the length of the course in days.
 
 # ---
 # 
-# <h4>Courses Information</h4>
+# ### Courses Information
 
-# In[4]:
+# In[11]:
 
 
 courses_types = analyze_df(courses, types=True)
@@ -49,60 +47,60 @@ courses_dupes = analyze_df(courses, dupes=True)
 courses_nums = analyze_df(courses, nums=True)
 
 
-# In[5]:
+# In[12]:
 
 
 md(f'''
-<b>Size</b>
+**Size**
     
 * Number of Rows: {analyze_df(courses, rowlen=True)}
 * Number of Columns: {analyze_df(courses, collen=True)}
 
-<b>Data Types</b>
+**Data Types**
 ''')
 
 
-# In[6]:
+# In[13]:
 
 
 courses.dtypes
 
 
-# <b>Null Values:</b>
+# **Null Values:**
 
-# In[7]:
+# In[14]:
 
 
 courses_nulls
 
 
-# <b>Unique Counts:</b>
+# **Unique Counts:**
 
-# In[8]:
+# In[15]:
 
 
 courses.nunique()
 
 
-# <b>Unique Categorical Values</b>:
+# **Unique Categorical Values**:
 
-# In[9]:
+# In[16]:
 
 
 unique_vals(courses)
 
 
-# <b>Duplicate Values</b>
+# **Duplicate Values**
 
-# In[10]:
+# In[17]:
 
 
 analyze_df(courses, dupes=True)
 
 
-# <b>Statistics:</b>
+# **Statistics:**
 
-# In[11]:
+# In[18]:
 
 
 courses.describe().round(1)
@@ -110,9 +108,9 @@ courses.describe().round(1)
 
 # ---
 # 
-# <h4>Modules and Presentations</h4>
+# ### Modules and Presentations
 
-# In[57]:
+# In[19]:
 
 
 mod_count = courses['code_module'].nunique()
@@ -124,15 +122,21 @@ avg_mod_count = round(courses['module_presentation_length'].mean(), 1)
 md(f'''* There are {mod_count} unique modules delivered over {presentation_count} presentations as detailed below:''')
 
 
-# In[16]:
+# In[20]:
 
 
 # making a crosstab to map each code module to its presentation
 pd.crosstab(index=courses['code_module'], columns=courses['code_presentation'])
 
 
-# In[29]:
+# In[21]:
 
 
-get_ipython().run_cell_magic('markdown', '', '\n---\n\n<h4>Module Presentation Length</h4>\n\n* Modules range from {min_mod_count} to {max_mod_count} days in length.\n* The average module is {avg_mod_count} days.')
+get_ipython().run_cell_magic('markdown', '', '\n---\n\n### Module Presentation Length\n\n* Modules range from {min_mod_count} to {max_mod_count} days in length.\n* The average module is {avg_mod_count} days.')
+
+
+# In[ ]:
+
+
+
 

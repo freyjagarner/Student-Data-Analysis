@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>Assessments and Student Assessments &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -87,15 +87,40 @@
   </a>
  </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Courses.html">
+   Courses
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Info.html">
+   Student Info
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Registration.html">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Assessment.html">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VLE.html">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -201,7 +226,17 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessments-and-student-assessments-merged-dataframe">
+   Assessments and Student Assessments Merged Dataframe:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-area">
+   Testing Area
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -214,119 +249,31 @@
               <div>
                 
   <hr class="docutils" />
-<h2>Assessments and Student Assessments Dataframes</h2><hr class="docutils" />
-<h4>Assessments and Student Assessments Merged Dataframe:</h4><div class="cell tag_remove_input docutils container">
+<div class="section" id="assessments-and-student-assessments">
+<h1>Assessments and Student Assessments<a class="headerlink" href="#assessments-and-student-assessments" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<hr class="docutils" />
+<div class="section" id="assessments-and-student-assessments-merged-dataframe">
+<h2>Assessments and Student Assessments Merged Dataframe:<a class="headerlink" href="#assessments-and-student-assessments-merged-dataframe" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_24084</span><span class="o">/</span><span class="mf">3924523329.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># merges dataframes student_assessment with assessments with a full outer join on their common ID id_assessment</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># creates a column _merge which tells you if the id_assessment was found in one or both dataframes</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">merged_assessments</span> <span class="o">=</span> <span class="n">student_assessment</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">assessments</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id_assessment&#39;</span><span class="p">]</span> <span class="p">,</span><span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">merged_assessments</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id_assessment</th>
-      <th>id_student</th>
-      <th>date_submitted</th>
-      <th>is_banked</th>
-      <th>score</th>
-      <th>code_module</th>
-      <th>code_presentation</th>
-      <th>assessment_type</th>
-      <th>date</th>
-      <th>weight</th>
-      <th>_merge</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1752</td>
-      <td>11391.0</td>
-      <td>18.0</td>
-      <td>0.0</td>
-      <td>78.0</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>TMA</td>
-      <td>19.0</td>
-      <td>10.0</td>
-      <td>both</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1752</td>
-      <td>28400.0</td>
-      <td>22.0</td>
-      <td>0.0</td>
-      <td>70.0</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>TMA</td>
-      <td>19.0</td>
-      <td>10.0</td>
-      <td>both</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1752</td>
-      <td>31604.0</td>
-      <td>17.0</td>
-      <td>0.0</td>
-      <td>72.0</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>TMA</td>
-      <td>19.0</td>
-      <td>10.0</td>
-      <td>both</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1752</td>
-      <td>32885.0</td>
-      <td>26.0</td>
-      <td>0.0</td>
-      <td>69.0</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>TMA</td>
-      <td>19.0</td>
-      <td>10.0</td>
-      <td>both</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1752</td>
-      <td>38053.0</td>
-      <td>19.0</td>
-      <td>0.0</td>
-      <td>79.0</td>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>TMA</td>
-      <td>19.0</td>
-      <td>10.0</td>
-      <td>both</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;student_assessment&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Our new merge column tells us if the data maps perfectly, or if it is only found on the right or left side, the right side being the assessments dataframe and the left side being the student_assessments dataframe</p></li>
 </ul>
-<p><b>Rows that do not map:</b></p>
+<p><strong>Rows that do not map:</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
 <div class="cell docutils container">
@@ -639,8 +586,8 @@
 </div>
 </div>
 </div>
-<p><b>Removing Eliminated Students</b></p>
-<p><b>Merged Assessment/Student_info dataframes</b></p>
+<p><strong>Removing Eliminated Students</strong></p>
+<p><strong>Merged Assessment/Student_info dataframes</strong></p>
 <p>In order to remove the students that we removed for the number of previous attempts, we must merge assessments and student info and find the difference</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -799,7 +746,7 @@
 </div></div></div>
 </div>
 <p>For this merge column the right side would be the student info dataframe and the left side would be assessments. If an entry receives the label of right_only there is a student who has no assessments, if the label is left_only, there is an assessment that doesn’t match up with a student.</p>
-<p><b>Assessments that do not map to students</b>:</p>
+<p><strong>Assessments that do not map to students</strong>:</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -956,7 +903,7 @@
 </table>
 </div></div></div>
 </div>
-<p><b>Students without any test scores<b>:</p>
+<p><strong>Students without any test scores</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">only_student_info</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1280,8 +1227,11 @@ We can drop both of these which are missing values for the purpose of this dataf
 </div>
 </div>
 </div>
+</div>
 <hr class="docutils" />
-<h4>Testing Area<div class="cell docutils container">
+<div class="section" id="testing-area">
+<h2>Testing Area<a class="headerlink" href="#testing-area" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">student_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">65002</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;final_result&#39;</span><span class="p">]])</span>
 </pre></div>
@@ -3697,17 +3647,17 @@ We can drop both of these which are missing values for the purpose of this dataf
 </table>
 </div></div></div>
 </div>
-<p><b>Updated Dataframe</b></p>
-<p><b>Size</b></p>
+<p><strong>Updated Dataframe</strong></p>
+<p><strong>Size</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Data Types</b></p>
+<p><strong>Data Types</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
 <ul class="simple">
 <li><p>id_student and id_assessments are both categorical values and so should be converted to objects</p></li>
 </ul>
-<p><b>Null Values</b></p>
+<p><strong>Null Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
 <ul class="simple">
@@ -3716,16 +3666,16 @@ We can drop both of these which are missing values for the purpose of this dataf
 <ul class="simple">
 <li><p>There are 173 null values for score. These records are, unfortunately not of much interest to us, since score is what we are trying to find the relationship for, and so we will discard them. This leaves us with no null data in assessments.</p></li>
 </ul>
-<p><b>Unique Counts</b></p>
+<p><strong>Unique Counts</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Unique Categorical Values</b></p>
+<p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Duplicate Values:</b></p>
+<p><strong>Duplicate Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Statistics</b></p>
+<p><strong>Statistics</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_assessments</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -3859,6 +3809,8 @@ add the test with all the same student information, the assessment id, type, and
                 <span class="n">new_df</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;code_module&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">],</span> <span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">],</span> <span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">],</span> <span class="n">assessments</span><span class="p">[</span><span class="s1">&#39;id_assessment&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">assessments</span><span class="p">[</span><span class="s1">&#39;assessment_type&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">assessments</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]])</span>
                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">new_df</span><span class="p">)</span><span class="si">}</span><span class="s2">/ rows appended&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>

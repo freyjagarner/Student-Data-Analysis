@@ -4,27 +4,20 @@
 # In[1]:
 
 
-from ipynb.fs.full.Student_Info import student_info_reg
-from ipynb.fs.full.Assessments import cleaned_assessments
-from functions import *
-
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
-("")
+get_ipython().run_cell_magic('capture', '', 'from ipynb.fs.full.Student_Info import student_info_reg\nfrom ipynb.fs.full.Assessments import cleaned_assessments\nfrom functions import *\n\n@register_cell_magic\ndef markdown(line, cell):\n    return md(cell.format(**globals()))\n;')
 
 
 # ---
 # 
-# <h2>VLE and Student VLE Dataframes</h2>
+# # VLE and Student VLE Dataframes
 
 # ---
 # 
-# <h3>VLE</h3>
+# ## VLE
 # 
 # The VLE dataframe contains information about materials available on the Virtual Learning Environment.
 
-# In[129]:
+# In[2]:
 
 
 vle.head()
@@ -32,15 +25,15 @@ vle.head()
 
 # ---
 # 
-# <h4>VLE Contents</h4>
+# ### VLE Contents
 # 
-# * <b>id_site</b>: The site ID is the unique identifier for the online resource.
-# * <b>code_module</b>: The code module is the module the resource is associated with.
-# * <b>code_presentation</b>: The code presentation represents the time the module was held at.
-# * <b>activity_type</b>: The activity type is the type of online material.
-# * <b>week_from</b>: The week from is the week the material was intended to be used from.
+# * **id_site**: The site ID is the unique identifier for the online resource.
+# * **code_module**: The code module is the module the resource is associated with.
+# * **code_presentation**: The code presentation represents the time the module was held at.
+# * **activity_type**: The activity type is the type of online material.
+# * **week_from**: The week from is the week the material was intended to be used from.
 #     - week_from will not be used in our analysis due to it being irrelevant information and will be dropped.
-# * <b>week_to</b>: The week to is the week the material was intended to be used until.
+# * **week_to**: The week to is the week the material was intended to be used until.
 #     - week_to will not be used in our analysis due to it being irrelevant information and will be dropped.
 
 # In[130]:
@@ -52,7 +45,7 @@ vle = vle.drop(columns=['week_from', 'week_to'])
 
 # ---
 # 
-# <h4>Student VLE</h4>
+# ## Student VLE
 # 
 # The Student VLE Dataframe contains information about student interactions with the online resources in the Virtual Learning Environment.
 
@@ -64,19 +57,19 @@ student_vle.head()
 
 # ---
 # 
-# <h4>Student VLE Contents</h4>
+# ### Student VLE Contents
 # 
-# * <b>code_module</b>: The code module is the module the resource and student are associated with.
-# * <b>code_presentation</b>: The code presentation represents the time the module was held at.
-# * <b>id_site</b>: The site ID is the unique identifier for the online resource with which the student engaged.
-# * <b>date</b>: The date represents the date that the student engaged with the material relevant to the start date of the module.
-# * <b>sum_click</b>: The sum click represents the number of clicks the student made on that day.
+# * **code_module**: The code module is the module the resource and student are associated with.
+# * **code_presentation**: The code presentation represents the time the module was held at.
+# * **id_site**: The site ID is the unique identifier for the online resource with which the student engaged.
+# * **date**: The date represents the date that the student engaged with the material relevant to the start date of the module.
+# * **sum_click**: The sum click represents the number of clicks the student made on that day.
 
 # ```{note}
 # Since we are only interested in information that is pertinent to the student, we will be merging the VLE and Student VLE dataframes to have only the relevant information of each.
 # ```
 
-# <h4>Merged VLE and Student VLE Dataframe</h4>
+# ### Merged VLE and Student VLE Dataframe
 
 # In[132]:
 
@@ -118,11 +111,11 @@ merged_vle = merged_vle.drop(columns=['_merge'])
 merged_vle.reset_index(drop=True).head()
 
 
-# <b>Aggregating Clicks</b>
+# **Aggregating Clicks**
 
 # * For this analysis we will only be using the sum of the students clicks throughout the course, and so we must add each days clicks per student.
 
-# <b>Number of activity types</b>
+# **Number of activity types**
 
 # * We are going to remove activity_type for now. If sum_clicks overall ends up being a good predictor of how a student does, we will add it back.
 # * We will remove id_site for now since it does not add any information to the resource it maps to.
@@ -134,7 +127,7 @@ merged_vle.reset_index(drop=True).head()
 merged_vle = merged_vle.drop(columns=['activity_type', 'id_site'])
 
 
-# <b>VLE with clicks per student per module aggregated</b>
+# **VLE with clicks per student per module aggregated**
 
 # In[143]:
 
@@ -154,11 +147,11 @@ merged_vle = merged_vle.astype({'id_student': object})
 merged_vle = merged_vle[['code_module', 'code_presentation', 'id_student', 'sum_click']]
 
 
-# <b>Merge with Student Info Dataframe</b>
+# **Merge with Student Info Dataframe**
 
 # Finally, we will merge the merged VLE dataframe with the Student info dataframe to ensure wwe are only working with students who were not previously eliminated due to dropping out before the first day or for being on higher than their first attempt
 
-# <b>Merged VLE and Student Info Dataframes</b>
+# **Merged VLE and Student Info Dataframes**
 
 # In[145]:
 
@@ -224,7 +217,7 @@ cleaned_vle = merged_vle_si[['code_module', 'code_presentation',  'id_student', 
 cleaned_vle
 
 
-# <b>Merge with Assessments Dataframe</b>
+# **Merge with Assessments Dataframe**
 
 # Finally we will be creating a merged dataframe of the the merged vle and student info and assessments dataframes. This is so that we can attempt to predict scores based on number of clicks.
 
@@ -270,7 +263,7 @@ score_test = cleaned_assessments.groupby(['id_student']).aggregate(aggregates).r
 score_test.loc[score_test['weight']>=200]
 
 
-# <b>Data Types:</b>
+# **Data Types:**
 
 # In[197]:
 

@@ -4,22 +4,16 @@
 # In[1]:
 
 
-from functions import *
-
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
-
-("")
+get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@register_cell_magic\ndef markdown(line, cell):\n    return md(cell.format(**globals()))')
 
 
 # ---
 # 
-# <h2>Student Assessments Dataframe</h2>
+# # Student Assessments
 
 # The Student Assessments dataframe contains information about each student and the assessments they took during the module
 
-# In[6]:
+# In[2]:
 
 
 student_assessment.head()
@@ -27,20 +21,20 @@ student_assessment.head()
 
 # ---
 # 
-# <h4>Student Assessment Contents</h4>
+# ### Student Assessment Contents
 # 
-# * <b>id_assessment</b>: The assessment ID is the unique identifier for the assessment the student took.
-# * <b>id_student</b>: The student ID is the unique identifier for the student who took the assessment.
-# * <b>date_submitted</b>: The date submitted is the date the student submitted the exam relevant to the start date of the module.
-# * <b>is_banked</b>: Whether the score for the assessment is banked indicates wheter the assessment result was transferred from a previous presentation.
+# * **id_assessment**: The assessment ID is the unique identifier for the assessment the student took.
+# * **id_student**: The student ID is the unique identifier for the student who took the assessment.
+# * **date_submitted**: The date submitted is the date the student submitted the exam relevant to the start date of the module.
+# * **is_banked**: Whether the score for the assessment is banked indicates wheter the assessment result was transferred from a previous presentation.
 #     - is_banked does indicate that the student took the course previously, but since it is their first score that is retained it is not a confounder and entries with a 1 for is_banked will be kept.
 #     - is_banked has no other relevant information though and so can be removed.
 
 # ---
 # 
-# <h4>Student Assessments Information</h4>
+# ### Student Assessments Information
 
-# <b>Size</b>
+# **Size**
 
 # In[7]:
 
@@ -49,7 +43,7 @@ md(f'''* Number of Rows: {len(student_assessment)}
 * Number of Columns: {len(student_assessment.columns)}''')
 
 
-# <b>Data Types</b>
+# **Data Types**
 
 # In[8]:
 
@@ -67,7 +61,7 @@ student_assessment = student_assessment.astype({'id_assessment': int, 'id_studen
 student_assessment = student_assessment.astype({'id_assessment': object, 'id_student': object})
 
 
-# <b>Null Values</b>
+# **Null Values**
 
 # In[10]:
 
@@ -150,7 +144,7 @@ for index, row in student_assessment.iterrows():
     NaN_students_all_exams = NaN_students_all_exams.append(student_assessment.loc[student_info['id_student'] == row['id_student']])
 
 
-# <b>Merged Assessment/Student_info dataframes</b>
+# **Merged Assessment/Student_info dataframes**
 
 # In order to remove the students that we removed for the number of previous attempts, we must merge assessments and student info and find the difference
 
@@ -172,7 +166,7 @@ only_assessments = merged_si_assm.loc[merged_si_assm['_merge']=='left_only']
 only_student_info = merged_si_assm.loc[merged_si_assm['_merge']=='right_only']
 
 
-# <b>Assessments that do not map to students</b>:
+# **Assessments that do not map to students**:
 
 # In[ ]:
 
@@ -180,7 +174,7 @@ only_student_info = merged_si_assm.loc[merged_si_assm['_merge']=='right_only']
 only_assessments.head()
 
 
-# <b>Students without any test scores<b>:
+# **Students without any test scores**:
 
 # In[ ]:
 
@@ -245,7 +239,7 @@ merged_si_assm.reset_index(drop=True).head()
 student_assessment = merged_si_assm
 
 
-# <b>Unique Counts</b>
+# **Unique Counts**
 
 # In[ ]:
 
@@ -253,7 +247,7 @@ student_assessment = merged_si_assm
 student_assessment.nunique()
 
 
-# <b>Unique Categorical Values</b>
+# **Unique Categorical Values**
 
 # In[ ]:
 
@@ -261,7 +255,7 @@ student_assessment.nunique()
 unique_vals(student_assessment)
 
 
-# <b>Duplicate Values:</b>
+# **Duplicate Values:**
 
 # In[ ]:
 
@@ -269,7 +263,7 @@ unique_vals(student_assessment)
 duplicate_vals(student_assessment)
 
 
-# <b>Statistics</b>
+# **Statistics**
 
 # In[ ]:
 

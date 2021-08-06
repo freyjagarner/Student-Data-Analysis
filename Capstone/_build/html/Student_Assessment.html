@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>Student Assessments &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="VLE and Student VLE Dataframes" href="VLE.html" />
+    <link rel="prev" title="Assessments" href="Assessments.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,15 +89,40 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Courses.html">
+   Courses
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Info.html">
+   Student Info
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Registration.html">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Assessments.html">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VLE.html">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -201,7 +228,17 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-assessment-contents">
+   Student Assessment Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-assessments-information">
+   Student Assessments Information
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -214,94 +251,40 @@
               <div>
                 
   <hr class="docutils" />
-<h2>Student Assessments Dataframe</h2><p>The Student Assessments dataframe contains information about each student and the assessments they took during the module</p>
+<div class="section" id="student-assessments">
+<h1>Student Assessments<a class="headerlink" href="#student-assessments" title="Permalink to this headline">¶</a></h1>
+<p>The Student Assessments dataframe contains information about each student and the assessments they took during the module</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_14952</span><span class="o">/</span><span class="mf">607765094.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">student_assessment</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id_assessment</th>
-      <th>id_student</th>
-      <th>date_submitted</th>
-      <th>is_banked</th>
-      <th>score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1752</td>
-      <td>11391</td>
-      <td>18</td>
-      <td>0</td>
-      <td>78.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1752</td>
-      <td>28400</td>
-      <td>22</td>
-      <td>0</td>
-      <td>70.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1752</td>
-      <td>31604</td>
-      <td>17</td>
-      <td>0</td>
-      <td>72.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1752</td>
-      <td>32885</td>
-      <td>26</td>
-      <td>0</td>
-      <td>69.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1752</td>
-      <td>38053</td>
-      <td>19</td>
-      <td>0</td>
-      <td>79.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;student_assessment&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <hr class="docutils" />
-<h4>Student Assessment Contents</h4>
+<div class="section" id="student-assessment-contents">
+<h2>Student Assessment Contents<a class="headerlink" href="#student-assessment-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><b>id_assessment</b>: The assessment ID is the unique identifier for the assessment the student took.</p></li>
-<li><p><b>id_student</b>: The student ID is the unique identifier for the student who took the assessment.</p></li>
-<li><p><b>date_submitted</b>: The date submitted is the date the student submitted the exam relevant to the start date of the module.</p></li>
-<li><p><b>is_banked</b>: Whether the score for the assessment is banked indicates wheter the assessment result was transferred from a previous presentation.</p>
+<li><p><strong>id_assessment</strong>: The assessment ID is the unique identifier for the assessment the student took.</p></li>
+<li><p><strong>id_student</strong>: The student ID is the unique identifier for the student who took the assessment.</p></li>
+<li><p><strong>date_submitted</strong>: The date submitted is the date the student submitted the exam relevant to the start date of the module.</p></li>
+<li><p><strong>is_banked</strong>: Whether the score for the assessment is banked indicates wheter the assessment result was transferred from a previous presentation.</p>
 <ul>
 <li><p>is_banked does indicate that the student took the course previously, but since it is their first score that is retained it is not a confounder and entries with a 1 for is_banked will be kept.</p></li>
 <li><p>is_banked has no other relevant information though and so can be removed.</p></li>
 </ul>
 </li>
 </ul>
+</div>
 <hr class="docutils" />
-<h4>Student Assessments Information</h4><p><b>Size</b></p>
+<div class="section" id="student-assessments-information">
+<h2>Student Assessments Information<a class="headerlink" href="#student-assessments-information" title="Permalink to this headline">¶</a></h2>
+<p><strong>Size</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <ul class="simple">
@@ -310,7 +293,7 @@
 </ul>
 </div>
 </div>
-<p><b>Data Types</b></p>
+<p><strong>Data Types</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id_assessment       int64
@@ -326,7 +309,7 @@ dtype: object
 <ul class="simple">
 <li><p>id_student and id_assessments are both categorical values and so should be converted to objects</p></li>
 </ul>
-<p><b>Null Values</b></p>
+<p><strong>Null Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id_assessment       0
@@ -842,15 +825,15 @@ Name: final_result, dtype: int64
 </div>
 </div>
 </div>
-<p><b>Merged Assessment/Student_info dataframes</b></p>
+<p><strong>Merged Assessment/Student_info dataframes</strong></p>
 <p>In order to remove the students that we removed for the number of previous attempts, we must merge assessments and student info and find the difference</p>
 <div class="cell tag_remove_input docutils container">
 </div>
 <p>For this merge column the right side would be the student info dataframe and the left side would be assessments. If an entry receives the label of right_only there is a student who has no assessments, if the label is left_only, there is an assessment that doesn’t match up with a student.</p>
-<p><b>Assessments that do not map to students</b>:</p>
+<p><strong>Assessments that do not map to students</strong>:</p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Students without any test scores<b>:</p>
+<p><strong>Students without any test scores</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">only_student_info</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -878,20 +861,22 @@ Name: final_result, dtype: int64
 </div>
 </div>
 </div>
-<p><b>Unique Counts</b></p>
+<p><strong>Unique Counts</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Unique Categorical Values</b></p>
+<p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Duplicate Values:</b></p>
+<p><strong>Duplicate Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 </div>
-<p><b>Statistics</b></p>
+<p><strong>Statistics</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_assessment</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -921,6 +906,8 @@ Name: final_result, dtype: int64
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Assessments.html" title="previous page">Assessments</a>
+    <a class='right-next' id="next-link" href="VLE.html" title="next page">VLE and Student VLE Dataframes</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Capstone Project</title>
+    <title>Assessments &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Student Assessments" href="Student_Assessment.html" />
+    <link rel="prev" title="Student Registration Dataframe" href="Student_Registration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,15 +89,40 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<p class="caption">
+ <span class="caption-text">
+  Cleaning and Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Courses.html">
+   Courses
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="Student_Info.html">
+   Student Info
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Registration.html">
+   Student Registration Dataframe
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Student_Assessment.html">
+   Student Assessments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="VLE.html">
+   VLE and Student VLE Dataframes
   </a>
  </li>
 </ul>
@@ -201,7 +228,12 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assessments-contents">
+   Assessments Contents
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -213,99 +245,51 @@
         
               <div>
                 
-  <hr class="docutils" />
-<h2>Assessments Dataframe</h2><p>The assessments dataframe contains information about the unique assessments in each code module and presentation.</p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>code_module</th>
-      <th>code_presentation</th>
-      <th>id_assessment</th>
-      <th>assessment_type</th>
-      <th>date</th>
-      <th>weight</th>
-      <th>module_presentation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>1752</td>
-      <td>TMA</td>
-      <td>19.0</td>
-      <td>10.0</td>
-      <td>AAA2013J</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>1753</td>
-      <td>TMA</td>
-      <td>54.0</td>
-      <td>20.0</td>
-      <td>AAA2013J</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>1754</td>
-      <td>TMA</td>
-      <td>117.0</td>
-      <td>20.0</td>
-      <td>AAA2013J</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>1755</td>
-      <td>TMA</td>
-      <td>166.0</td>
-      <td>20.0</td>
-      <td>AAA2013J</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>1756</td>
-      <td>TMA</td>
-      <td>215.0</td>
-      <td>30.0</td>
-      <td>AAA2013J</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nd">@register_cell_magic</span>
+<span class="k">def</span> <span class="nf">markdown</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">md</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">globals</span><span class="p">()))</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12720</span><span class="o">/</span><span class="mf">3594874935.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@register_cell_magic</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">markdown</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">md</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">globals</span><span class="p">()))</span>
+
+<span class="o">~</span>\<span class="n">Documents</span>\<span class="n">GitHub</span>\<span class="n">WGU</span><span class="o">-</span><span class="n">BS</span><span class="o">-</span><span class="n">Data</span><span class="o">-</span><span class="n">Analytics</span><span class="o">-</span><span class="n">Capstone</span>\<span class="n">Capstone</span>\<span class="n">functions</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import statements</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="assessments">
+<h1>Assessments<a class="headerlink" href="#assessments" title="Permalink to this headline">¶</a></h1>
+<p>The assessments dataframe contains information about the unique assessments in each code module and presentation.</p>
+<p>assessments.head()</p>
 <hr class="docutils" />
-<h4>Assessments Contents</h4>
+<div class="section" id="assessments-contents">
+<h2>Assessments Contents<a class="headerlink" href="#assessments-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><b>code_module</b>: The code module represents the code name of the course the assessment was held for.</p></li>
-<li><p><b>code_presentation</b>: The presentation represents the presentation which the test was held for.</p></li>
-<li><p><b>id_assessment</b>: The assessment ID is the unique identifier for each assessment.</p></li>
-<li><p><b>assessment_type</b>: The assessment type represents the kind of assessment it was.</p>
+<li><p><strong>code_module</strong>: The code module represents the code name of the course the assessment was held for.</p></li>
+<li><p><strong>code_presentation</strong>: The presentation represents the presentation which the test was held for.</p></li>
+<li><p><strong>id_assessment</strong>: The assessment ID is the unique identifier for each assessment.</p></li>
+<li><p><strong>assessment_type</strong>: The assessment type represents the kind of assessment it was.</p>
 <ul>
 <li><p>There are three assessment types:</p>
 <ul>
@@ -316,19 +300,24 @@
 </li>
 </ul>
 </li>
-<li><p><b>date</b>: The date is how many days from the start of the course the assessment took place</p></li>
-<li><p><b>weight</b>: The weight is the weighted value of the assessment. Exams should have a weight of 100 which the rest of the assessments should add to 100 in total.</p></li>
+<li><p><strong>date</strong>: The date is how many days from the start of the course the assessment took place</p></li>
+<li><p><strong>weight</strong>: The weight is the weighted value of the assessment. Exams should have a weight of 100 which the rest of the assessments should add to 100 in total.</p></li>
 </ul>
-<p><b>Size</b></p>
+<p><strong>Size</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<ul class="simple">
-<li><p>Number of Rows: 206</p></li>
-<li><p>Number of Columns: 7</p></li>
-</ul>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12720</span><span class="o">/</span><span class="mf">3094633935.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;* Number of Rows: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">assessments</span><span class="p">)</span><span class="si">}</span><span class="s1"></span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s1"> * Number of Columns: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">assessments</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;md&#39; is not defined
+</pre></div>
 </div>
 </div>
-<p><b>Data Types</b></p>
+</div>
+<p><strong>Data Types</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             object
@@ -346,7 +335,7 @@ dtype: object
 <ul class="simple">
 <li><p>id_student and id_assessments are both categorical values and so should be converted to objects</p></li>
 </ul>
-<p><b>Null Values</b></p>
+<p><strong>Null Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             0
@@ -367,7 +356,7 @@ dtype: int64
 <ul class="simple">
 <li><p>There are 173 null values for score. These records are, unfortunately not of much interest to us, since score is what we are trying to find the relationship for, and so we will discard them. This leaves us with no null data in assessments.</p></li>
 </ul>
-<p><b>Unique Counts</b></p>
+<p><strong>Unique Counts</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module              7
@@ -382,7 +371,7 @@ dtype: int64
 </div>
 </div>
 </div>
-<p><b>Unique Categorical Values</b></p>
+<p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
@@ -417,7 +406,7 @@ module_presentation: [&#39;AAA2013J&#39; &#39;AAA2014J&#39; &#39;BBB2013B&#39; &
 </div>
 </div>
 </div>
-<p><b>Duplicate Values:</b></p>
+<p><strong>Duplicate Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No Duplicate Values
@@ -425,7 +414,7 @@ module_presentation: [&#39;AAA2013J&#39; &#39;AAA2014J&#39; &#39;BBB2013B&#39; &
 </div>
 </div>
 </div>
-<p><b>Statistics</b></p>
+<p><strong>Statistics</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assessments</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -500,6 +489,8 @@ module_presentation: [&#39;AAA2013J&#39; &#39;AAA2014J&#39; &#39;BBB2013B&#39; &
 </table>
 </div></div></div>
 </div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -526,6 +517,8 @@ module_presentation: [&#39;AAA2013J&#39; &#39;AAA2014J&#39; &#39;BBB2013B&#39; &
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Student_Registration.html" title="previous page">Student Registration Dataframe</a>
+    <a class='right-next' id="next-link" href="Student_Assessment.html" title="next page">Student Assessments</a>
 
         </div>
         

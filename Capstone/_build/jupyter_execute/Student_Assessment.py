@@ -9,7 +9,7 @@ get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@registe
 
 # ---
 # 
-# # Student Assessments
+# # Student Assessment
 
 # The Student Assessments dataframe contains information about each student and the assessments they took during the module
 
@@ -21,7 +21,7 @@ student_assessment.head()
 
 # ---
 # 
-# ### Student Assessment Contents
+# ## Student Assessment Contents
 # 
 # * **id_assessment**: The assessment ID is the unique identifier for the assessment the student took.
 # * **id_student**: The student ID is the unique identifier for the student who took the assessment.
@@ -32,11 +32,11 @@ student_assessment.head()
 
 # ---
 # 
-# ### Student Assessments Information
+# ## Student Assessments Information
 
 # **Size**
 
-# In[7]:
+# In[3]:
 
 
 md(f'''* Number of Rows: {len(student_assessment)}
@@ -45,7 +45,7 @@ md(f'''* Number of Rows: {len(student_assessment)}
 
 # **Data Types**
 
-# In[8]:
+# In[4]:
 
 
 student_assessment.dtypes
@@ -53,7 +53,7 @@ student_assessment.dtypes
 
 # * id_student and id_assessments are both categorical values and so should be converted to objects
 
-# In[9]:
+# In[5]:
 
 
 # converting the data types
@@ -63,63 +63,63 @@ student_assessment = student_assessment.astype({'id_assessment': object, 'id_stu
 
 # **Null Values**
 
-# In[10]:
+# In[6]:
 
 
 # prints the sum of a columns null value
 student_assessment.isnull().sum()
 
 
-# In[12]:
+# In[7]:
 
 
 null_score = student_assessment['score'].isnull().sum()
 
 
-# In[13]:
+# In[8]:
 
 
 get_ipython().run_cell_magic('markdown', '', '\n* We have {null_score} null values for score, which we are trying to predict.')
 
 
-# In[26]:
+# In[9]:
 
 
 NaN_scores = student_assessment.loc[student_assessment['score'].isnull() == True]
 
 
-# In[48]:
+# In[10]:
 
 
 NaN_scores
 
 
-# In[52]:
+# In[11]:
 
 
 students_w_NaN_scores = pd.DataFrame()
 
 
-# In[59]:
+# In[12]:
 
 
 for index, row in NaN_scores.iterrows():
     students_w_NaN_scores = students_w_NaN_scores.append(student_info.loc[student_info['id_student'] == row['id_student']])
 
 
-# In[60]:
+# In[13]:
 
 
 students_w_NaN_scores
 
 
-# In[61]:
+# In[14]:
 
 
 students_w_NaN_scores['final_result'].value_counts()
 
 
-# In[63]:
+# In[15]:
 
 
 student_assessment.loc[student_assessment['id_student'] == 631786]
@@ -131,13 +131,13 @@ student_assessment.loc[student_assessment['id_student'] == 631786]
 
 
 
-# In[62]:
+# In[16]:
 
 
 NaN_students_all_exams = pd.DataFrame()
 
 
-# In[ ]:
+# In[17]:
 
 
 for index, row in student_assessment.iterrows():

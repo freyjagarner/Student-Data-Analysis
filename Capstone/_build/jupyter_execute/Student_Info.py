@@ -20,7 +20,7 @@ get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@registe
 student_info.head()
 
 
-# ### Contents
+# ## Contents
 # 
 # * **code_module**: The code module represents the course the student is taking.
 # * **code_presentation**: The code presentations are the year and semester the student is taking the course.
@@ -48,7 +48,7 @@ student_info.head()
 
 # ---
 # 
-# ### Student Info Information
+# ## Student Info Information
 
 # In[3]:
 
@@ -173,7 +173,7 @@ get_ipython().run_cell_magic('markdown', '', '\n* Most students do not have a pr
 ax = sns.countplot(x="code_module", hue="code_presentation", palette="Greens_d", data=student_info)
 
 
-# In[54]:
+# In[19]:
 
 
 students_per_presentation_module = pd.DataFrame(student_info['id_student'].groupby([student_info['code_module'], student_info['code_presentation']]).count()).reset_index()
@@ -182,7 +182,7 @@ students_per_presentation_module['year'] =students_per_presentation_module['code
 students_per_presentation_module['month'] =students_per_presentation_module['code_presentation'].str[4:]
 
 
-# In[55]:
+# In[20]:
 
 
 students_per_presentation_module

@@ -6,10 +6,6 @@
 
 from functions import *
 
-@register_cell_magic
-def markdown(line, cell):
-    return md(cell.format(**globals()))
-
 
 # # Courses
 # 
@@ -19,7 +15,7 @@ def markdown(line, cell):
 
 # The courses dataframe has information for all modules and their presentations.
 
-# In[10]:
+# In[2]:
 
 
 courses.head()
@@ -27,7 +23,7 @@ courses.head()
 
 # ---
 # 
-# ### Contents
+# ## Courses Contents
 # 
 # * **code_module**: The code module represents the code name of the course. Modules are identified with three capital letters which run sequentially between AAA and GGG
 # * **code_presentation**: The presentations are codified by their year and offering semester. B is for February and J is for October. 2013B for example is February of 2013. 
@@ -35,56 +31,43 @@ courses.head()
 
 # ---
 # 
-# ### Courses Information
+# ## Courses Information
 
-# In[11]:
+# **Size**
 
-
-courses_types = analyze_df(courses, types=True)
-courses_nulls = analyze_df(courses, nulls=True)
-courses_nunique = analyze_df(courses, uniques=True)
-courses_dupes = analyze_df(courses, dupes=True)
-courses_nums = analyze_df(courses, nums=True)
+# In[3]:
 
 
-# In[12]:
+get_size(courses)
 
 
-md(f'''
-**Size**
-    
-* Number of Rows: {analyze_df(courses, rowlen=True)}
-* Number of Columns: {analyze_df(courses, collen=True)}
+# **Data Types**
 
-**Data Types**
-''')
+# In[4]:
 
 
-# In[13]:
-
-
-courses.dtypes
+get_dtypes(courses)
 
 
 # **Null Values:**
 
-# In[14]:
+# In[5]:
 
 
-courses_nulls
+null_vals(courses)
 
 
 # **Unique Counts:**
 
-# In[15]:
+# In[6]:
 
 
-courses.nunique()
+dataframe(courses.nunique(), columns=['Count']).reset_index()
 
 
 # **Unique Categorical Values**:
 
-# In[16]:
+# In[7]:
 
 
 unique_vals(courses)
@@ -92,15 +75,15 @@ unique_vals(courses)
 
 # **Duplicate Values**
 
-# In[17]:
+# In[8]:
 
 
-analyze_df(courses, dupes=True)
+get_dupes(courses)
 
 
 # **Statistics:**
 
-# In[18]:
+# In[9]:
 
 
 courses.describe().round(1)
@@ -108,9 +91,9 @@ courses.describe().round(1)
 
 # ---
 # 
-# ### Modules and Presentations
+# ## Modules and Presentations
 
-# In[19]:
+# In[10]:
 
 
 mod_count = courses['code_module'].nunique()
@@ -122,17 +105,28 @@ avg_mod_count = round(courses['module_presentation_length'].mean(), 1)
 md(f'''* There are {mod_count} unique modules delivered over {presentation_count} presentations as detailed below:''')
 
 
-# In[20]:
+# In[11]:
 
 
 # making a crosstab to map each code module to its presentation
 pd.crosstab(index=courses['code_module'], columns=courses['code_presentation'])
 
 
-# In[21]:
+# In[12]:
 
 
-get_ipython().run_cell_magic('markdown', '', '\n---\n\n### Module Presentation Length\n\n* Modules range from {min_mod_count} to {max_mod_count} days in length.\n* The average module is {avg_mod_count} days.')
+md("""
+## Module Presentation Length
+
+* Modules range from {min_mod_count} to {max_mod_count} days in length.
+* The average module is {avg_mod_count} days.
+""")
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:

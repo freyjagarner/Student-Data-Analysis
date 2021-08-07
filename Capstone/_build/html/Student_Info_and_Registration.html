@@ -115,7 +115,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Student_Assessment.html">
-   Student Assessments
+   Student Assessment
   </a>
  </li>
  <li class="toctree-l1">
@@ -244,27 +244,6 @@
               <div>
                 
   <div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12856</span><span class="o">/</span><span class="mf">3594874935.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@register_cell_magic</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">markdown</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">md</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">globals</span><span class="p">()))</span>
-
-<span class="o">~</span>\<span class="n">Documents</span>\<span class="n">GitHub</span>\<span class="n">WGU</span><span class="o">-</span><span class="n">BS</span><span class="o">-</span><span class="n">Data</span><span class="o">-</span><span class="n">Analytics</span><span class="o">-</span><span class="n">Capstone</span>\<span class="n">Capstone</span>\<span class="n">functions</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import statements</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p><a id='StudentInfo'></a></p>
 <div class="section" id="student-info-and-student-registration">
@@ -280,20 +259,6 @@
 </ul>
 </div>
 <div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12856</span><span class="o">/</span><span class="mf">1800263459.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># left join and merge student info with student registration</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">student_info_reg</span> <span class="o">=</span> <span class="n">student_info</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">student_registration</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;code_module&#39;</span><span class="p">,</span> <span class="s1">&#39;code_presentation&#39;</span><span class="p">,</span> <span class="s1">&#39;id_student&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># changing the student info dataframe to include only records where num_prev_attempts is</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">student_info_reg</span> <span class="o">=</span> <span class="n">student_info_reg</span><span class="p">[</span><span class="n">student_info_reg</span><span class="p">[</span><span class="s1">&#39;num_of_prev_attempts&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;student_info&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="student-info-information">

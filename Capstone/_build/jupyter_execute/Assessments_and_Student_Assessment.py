@@ -10,21 +10,10 @@ get_ipython().run_cell_magic('capture', '', 'from ipynb.fs.full.Student_Info_and
 # ---
 # 
 # # Assessments and Student Assessments
-# ---
-
-# 
-
-# In[1]:
-
-
-
-
-
-# 
 
 # ---
 # 
-# ### Assessments and Student Assessments Merged Dataframe:
+# ## Assessments and Student Assessments Merged Dataframe:
 
 # In[2]:
 
@@ -181,7 +170,7 @@ cleaned_assessments = merged_si_assm
 
 # ---
 # 
-# ### Testing Area
+# ## Testing Area
 
 # In[19]:
 

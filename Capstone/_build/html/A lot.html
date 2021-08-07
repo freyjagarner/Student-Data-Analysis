@@ -115,7 +115,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Student_Assessment.html">
-   Student Assessments
+   Student Assessment
   </a>
  </li>
  <li class="toctree-l1">
@@ -244,27 +244,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_24256</span><span class="o">/</span><span class="mf">1642215727.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@register_cell_magic</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">markdown</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">md</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">globals</span><span class="p">()))</span>
-
-<span class="o">~</span>\<span class="n">Documents</span>\<span class="n">GitHub</span>\<span class="n">WGU</span><span class="o">-</span><span class="n">BS</span><span class="o">-</span><span class="n">Data</span><span class="o">-</span><span class="n">Analytics</span><span class="o">-</span><span class="n">Capstone</span>\<span class="n">Capstone</span>\<span class="n">functions</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import statements</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Navigation:</p>
 <ul class="simple">
@@ -300,50 +279,15 @@ For each dataframe we will first Get a general look at our data frame looking at
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_22708</span><span class="o">/</span><span class="mf">3261040900.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">merged_vle_ass</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">merged_vle_ass</span><span class="p">[</span><span class="s1">&#39;_merge&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;right_only&#39;</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>code_module</th>
-      <th>code_presentation</th>
-      <th>id_student</th>
-      <th>id_assessment</th>
-      <th>assessment_type</th>
-      <th>weight</th>
-      <th>date</th>
-      <th>date_submitted</th>
-      <th>score</th>
-      <th>region</th>
-      <th>imd_band</th>
-      <th>age_band</th>
-      <th>gender</th>
-      <th>highest_education</th>
-      <th>disability</th>
-      <th>final_result</th>
-      <th>date_registration</th>
-      <th>date_unregistration</th>
-      <th>sum_click</th>
-      <th>_merge</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;merged_vle_ass&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

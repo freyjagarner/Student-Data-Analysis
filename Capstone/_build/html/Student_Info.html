@@ -117,7 +117,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Student_Assessment.html">
-   Student Assessments
+   Student Assessment
   </a>
  </li>
  <li class="toctree-l1">
@@ -256,16 +256,117 @@
 <p>The student info dataframe contains information about students including the module and presentation they took, demographic information and the final result of their studies.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_3832</span><span class="o">/</span><span class="mf">1112623321.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># looking at the student_info dataframe</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">student_info</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;student_info&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code_module</th>
+      <th>code_presentation</th>
+      <th>id_student</th>
+      <th>gender</th>
+      <th>region</th>
+      <th>highest_education</th>
+      <th>imd_band</th>
+      <th>age_band</th>
+      <th>num_of_prev_attempts</th>
+      <th>studied_credits</th>
+      <th>disability</th>
+      <th>final_result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>11391</td>
+      <td>M</td>
+      <td>East Anglian Region</td>
+      <td>HE Qualification</td>
+      <td>90-100%</td>
+      <td>55&lt;=</td>
+      <td>0</td>
+      <td>240</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>28400</td>
+      <td>F</td>
+      <td>Scotland</td>
+      <td>HE Qualification</td>
+      <td>20-30%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>30268</td>
+      <td>F</td>
+      <td>North Western Region</td>
+      <td>A Level or Equivalent</td>
+      <td>30-40%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>Y</td>
+      <td>Withdrawn</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>31604</td>
+      <td>F</td>
+      <td>South East Region</td>
+      <td>A Level or Equivalent</td>
+      <td>50-60%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>32885</td>
+      <td>F</td>
+      <td>West Midlands Region</td>
+      <td>Lower Than A Level</td>
+      <td>50-60%</td>
+      <td>0-35</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
@@ -312,12 +413,12 @@
 <h2>Student Info Information<a class="headerlink" href="#student-info-information" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<p><b>Size</b></p>
+<p><strong>Size</strong></p>
 <ul class="simple">
 <li><p>Number of Rows: 32593</p></li>
 <li><p>Number of Columns: 12</p></li>
 </ul>
-<p><b>Data Types</b></p>
+<p><strong>Data Types</strong></p>
 </div>
 </div>
 <div class="cell tag_remove_input docutils container">

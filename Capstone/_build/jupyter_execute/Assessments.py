@@ -15,7 +15,7 @@ get_ipython().run_cell_magic('capture', '', 'from functions import *\n\n@registe
 
 # ---
 # 
-# ### Assessments Contents
+# ## Assessments Contents
 # 
 # * **code_module**: The code module represents the code name of the course the assessment was held for.
 # * **code_presentation**: The presentation represents the presentation which the test was held for.
@@ -39,7 +39,7 @@ md(f'''* Number of Rows: {len(assessments)}
 
 # **Data Types**
 
-# In[19]:
+# In[3]:
 
 
 assessments.dtypes
@@ -47,7 +47,7 @@ assessments.dtypes
 
 # * id_student and id_assessments are both categorical values and so should be converted to objects
 
-# In[23]:
+# In[4]:
 
 
 # converting the data types
@@ -57,7 +57,7 @@ assessments = assessments.astype({'id_assessment': object})
 
 # **Null Values**
 
-# In[24]:
+# In[5]:
 
 
 # prints the sum of a columns null value
@@ -66,7 +66,7 @@ assessments.isnull().sum()
 
 # * We have 2,873 null data points for assessment date. The documentation of this dataset states that if the exam date is missing then it is as the end of the last presentation week. We can find this information in the courses dataframe.
 
-# In[25]:
+# In[6]:
 
 
 # adding the dates for the null test dates
@@ -81,7 +81,7 @@ assessments.isnull().sum()
 
 # **Unique Counts**
 
-# In[27]:
+# In[7]:
 
 
 assessments.nunique()
@@ -89,7 +89,7 @@ assessments.nunique()
 
 # **Unique Categorical Values**
 
-# In[30]:
+# In[8]:
 
 
 unique_vals(assessments)
@@ -97,7 +97,7 @@ unique_vals(assessments)
 
 # **Duplicate Values:**
 
-# In[32]:
+# In[9]:
 
 
 duplicate_vals(assessments)
@@ -105,7 +105,7 @@ duplicate_vals(assessments)
 
 # **Statistics**
 
-# In[34]:
+# In[10]:
 
 
 assessments.describe()

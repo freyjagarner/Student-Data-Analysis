@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Student Assessments" href="Student_Assessment.html" />
+    <link rel="prev" title="Student Assessment" href="Student_Assessment.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -116,7 +116,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Student_Assessment.html">
-   Student Assessments
+   Student Assessment
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -232,30 +232,26 @@
   <a class="reference internal nav-link" href="#vle">
    VLE
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vle-contents">
-     VLE Contents
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vle-contents">
+   VLE Contents
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#student-vle">
    Student VLE
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#student-vle-contents">
-     Student VLE Contents
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#merged-vle-and-student-vle-dataframe">
-     Merged VLE and Student VLE Dataframe
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-vle-contents">
+   Student VLE Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#merged-vle-and-student-vle-dataframe">
+   Merged VLE and Student VLE Dataframe
+  </a>
  </li>
 </ul>
 
@@ -279,7 +275,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12472</span><span class="o">/</span><span class="mf">1735601912.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_24236</span><span class="o">/</span><span class="mf">1735601912.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">vle</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
 <span class="ne">NameError</span>: name &#39;vle&#39; is not defined
@@ -287,9 +283,10 @@
 </div>
 </div>
 </div>
+</div>
 <hr class="docutils" />
 <div class="section" id="vle-contents">
-<h3>VLE Contents<a class="headerlink" href="#vle-contents" title="Permalink to this headline">¶</a></h3>
+<h2>VLE Contents<a class="headerlink" href="#vle-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>id_site</strong>: The site ID is the unique identifier for the online resource.</p></li>
 <li><p><strong>code_module</strong>: The code module is the module the resource is associated with.</p></li>
@@ -306,7 +303,6 @@
 </ul>
 </li>
 </ul>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="student-vle">
@@ -390,9 +386,10 @@
 </table>
 </div></div></div>
 </div>
+</div>
 <hr class="docutils" />
 <div class="section" id="student-vle-contents">
-<h3>Student VLE Contents<a class="headerlink" href="#student-vle-contents" title="Permalink to this headline">¶</a></h3>
+<h2>Student VLE Contents<a class="headerlink" href="#student-vle-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>code_module</strong>: The code module is the module the resource and student are associated with.</p></li>
 <li><p><strong>code_presentation</strong>: The code presentation represents the time the module was held at.</p></li>
@@ -406,7 +403,7 @@
 </div>
 </div>
 <div class="section" id="merged-vle-and-student-vle-dataframe">
-<h3>Merged VLE and Student VLE Dataframe<a class="headerlink" href="#merged-vle-and-student-vle-dataframe" title="Permalink to this headline">¶</a></h3>
+<h2>Merged VLE and Student VLE Dataframe<a class="headerlink" href="#merged-vle-and-student-vle-dataframe" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># merging vle &amp; student vle with a full outer join on common columns</span>
@@ -2330,7 +2327,6 @@ dtype: object
 </div>
 </div>
 </div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -2357,7 +2353,7 @@ dtype: object
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Student_Assessment.html" title="previous page">Student Assessments</a>
+    <a class='left-prev' id="prev-link" href="Student_Assessment.html" title="previous page">Student Assessment</a>
 
         </div>
         

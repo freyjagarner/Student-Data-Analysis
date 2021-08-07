@@ -45,7 +45,7 @@ def markdown(line, cell):
 
 # <h3>General</h3>
 
-# In[71]:
+# In[2]:
 
 
 # pd.concat(x for _, x in vle.groupby(['id_student',"date"]) if len(x) > 1)[0:50]
@@ -57,7 +57,7 @@ def markdown(line, cell):
 
 
 
-# In[247]:
+# In[3]:
 
 
 merged_vle_ass.loc[merged_vle_ass['_merge'] == 'right_only']

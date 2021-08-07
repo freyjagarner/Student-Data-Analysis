@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Assessments &#8212; Capstone Project</title>
+    <title>Student Assessment &#8212; Capstone Project</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -117,7 +117,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Student Assessments
+   Student Assessment
   </a>
  </li>
  <li class="toctree-l1">
@@ -251,20 +251,80 @@
               <div>
                 
   <hr class="docutils" />
-<div class="section" id="student-assessments">
-<h1>Student Assessments<a class="headerlink" href="#student-assessments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="student-assessment">
+<h1>Student Assessment<a class="headerlink" href="#student-assessment" title="Permalink to this headline">¶</a></h1>
 <p>The Student Assessments dataframe contains information about each student and the assessments they took during the module</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_14952</span><span class="o">/</span><span class="mf">607765094.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">student_assessment</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;student_assessment&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id_assessment</th>
+      <th>id_student</th>
+      <th>date_submitted</th>
+      <th>is_banked</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1752</td>
+      <td>11391</td>
+      <td>18</td>
+      <td>0</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1752</td>
+      <td>28400</td>
+      <td>22</td>
+      <td>0</td>
+      <td>70.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1752</td>
+      <td>31604</td>
+      <td>17</td>
+      <td>0</td>
+      <td>72.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1752</td>
+      <td>32885</td>
+      <td>26</td>
+      <td>0</td>
+      <td>69.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1752</td>
+      <td>38053</td>
+      <td>19</td>
+      <td>0</td>
+      <td>79.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <hr class="docutils" />
 <div class="section" id="student-assessment-contents">
@@ -821,6 +881,45 @@ Name: final_result, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">student_assessment</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">NaN_students_all_exams</span> <span class="o">=</span> <span class="n">NaN_students_all_exams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student_assessment</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexingError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_21832</span><span class="o">/</span><span class="mf">4105479180.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">student_assessment</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">NaN_students_all_exams</span> <span class="o">=</span> <span class="n">NaN_students_all_exams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student_assessment</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]])</span>
+
+<span class="nn">~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pandas\core\indexing.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span> 
+<span class="g g-Whitespace">    </span><span class="mi">930</span>             <span class="n">maybe_callable</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="n">apply_if_callable</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">931</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_axis</span><span class="p">(</span><span class="n">maybe_callable</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span> 
+<span class="g g-Whitespace">    </span><span class="mi">933</span>     <span class="k">def</span> <span class="nf">_is_scalar_access</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+
+<span class="nn">~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pandas\core\indexing.py</span> in <span class="ni">_getitem_axis</span><span class="nt">(self, key, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1142</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_slice_axis</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1143</span>         <span class="k">elif</span> <span class="n">com</span><span class="o">.</span><span class="n">is_bool_indexer</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1144</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getbool_axis</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1145</span>         <span class="k">elif</span> <span class="n">is_list_like_indexer</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1146</span> 
+
+<span class="nn">~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pandas\core\indexing.py</span> in <span class="ni">_getbool_axis</span><span class="nt">(self, key, axis)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>         <span class="c1"># caller is responsible for ensuring non-None axis</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span>         <span class="n">labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_get_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">948</span>         <span class="n">key</span> <span class="o">=</span> <span class="n">check_bool_indexer</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>         <span class="n">inds</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_take_with_is_copy</span><span class="p">(</span><span class="n">inds</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+
+<span class="nn">~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\pandas\core\indexing.py</span> in <span class="ni">check_bool_indexer</span><span class="nt">(index, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2386</span>         <span class="n">mask</span> <span class="o">=</span> <span class="n">isna</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_values</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2387</span>         <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">2388</span>             <span class="k">raise</span> <span class="n">IndexingError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2389</span>                 <span class="s2">&quot;Unalignable boolean Series provided as &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2390</span>                 <span class="s2">&quot;indexer (index of the boolean Series and of &quot;</span>
+
+<span class="ne">IndexingError</span>: Unalignable boolean Series provided as indexer (index of the boolean Series and of the indexed object do not match).
 </pre></div>
 </div>
 </div>

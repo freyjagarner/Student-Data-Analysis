@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Student Assessments" href="Student_Assessment.html" />
+    <link rel="next" title="Student Assessment" href="Student_Assessment.html" />
     <link rel="prev" title="Student Registration Dataframe" href="Student_Registration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -117,7 +117,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Student_Assessment.html">
-   Student Assessments
+   Student Assessment
   </a>
  </li>
  <li class="toctree-l1">
@@ -256,27 +256,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12720</span><span class="o">/</span><span class="mf">3594874935.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@register_cell_magic</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">markdown</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">md</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">globals</span><span class="p">()))</span>
-
-<span class="o">~</span>\<span class="n">Documents</span>\<span class="n">GitHub</span>\<span class="n">WGU</span><span class="o">-</span><span class="n">BS</span><span class="o">-</span><span class="n">Data</span><span class="o">-</span><span class="n">Analytics</span><span class="o">-</span><span class="n">Capstone</span>\<span class="n">Capstone</span>\<span class="n">functions</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import statements</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="assessments">
 <h1>Assessments<a class="headerlink" href="#assessments" title="Permalink to this headline">¶</a></h1>
@@ -306,27 +285,21 @@
 <p><strong>Size</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_12720</span><span class="o">/</span><span class="mf">3094633935.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;* Number of Rows: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">assessments</span><span class="p">)</span><span class="si">}</span><span class="s1"></span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s1"> * Number of Columns: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">assessments</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;md&#39; is not defined
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>Number of Rows: 206</p></li>
+<li><p>Number of Columns: 6</p></li>
+</ul>
 </div>
 </div>
 <p><strong>Data Types</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             object
-code_presentation       object
-id_assessment            int64
-assessment_type         object
-date                   float64
-weight                 float64
-module_presentation     object
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module           object
+code_presentation     object
+id_assessment          int64
+assessment_type       object
+date                 float64
+weight               float64
 dtype: object
 </pre></div>
 </div>
@@ -338,13 +311,12 @@ dtype: object
 <p><strong>Null Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             0
-code_presentation       0
-id_assessment           0
-assessment_type         0
-date                   11
-weight                  0
-module_presentation     0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module           0
+code_presentation     0
+id_assessment         0
+assessment_type       0
+date                 11
+weight                0
 dtype: int64
 </pre></div>
 </div>
@@ -359,13 +331,12 @@ dtype: int64
 <p><strong>Unique Counts</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module              7
-code_presentation        4
-id_assessment          206
-assessment_type          3
-date                    78
-weight                  24
-module_presentation     22
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module            7
+code_presentation      4
+id_assessment        206
+assessment_type        3
+date                  78
+weight                24
 dtype: int64
 </pre></div>
 </div>
@@ -397,11 +368,6 @@ id_assessment: [1752 1753 1754 1755 1756 1757 1758 1759 1760 1761 1762 1763 1499
  37427 37434 37438 37439 37440 37441 37442 37443 37435 37436 37437 37444]
 
 assessment_type: [&#39;TMA&#39; &#39;Exam&#39; &#39;CMA&#39;]
-
-module_presentation: [&#39;AAA2013J&#39; &#39;AAA2014J&#39; &#39;BBB2013B&#39; &#39;BBB2013J&#39; &#39;BBB2014B&#39; &#39;BBB2014J&#39;
- &#39;CCC2014B&#39; &#39;CCC2014J&#39; &#39;DDD2013B&#39; &#39;DDD2013J&#39; &#39;DDD2014B&#39; &#39;DDD2014J&#39;
- &#39;EEE2013J&#39; &#39;EEE2014B&#39; &#39;EEE2014J&#39; &#39;FFF2013B&#39; &#39;FFF2013J&#39; &#39;FFF2014B&#39;
- &#39;FFF2014J&#39; &#39;GGG2013J&#39; &#39;GGG2014B&#39; &#39;GGG2014J&#39;]
 </pre></div>
 </div>
 </div>
@@ -518,7 +484,7 @@ module_presentation: [&#39;AAA2013J&#39; &#39;AAA2014J&#39; &#39;BBB2013B&#39; &
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Student_Registration.html" title="previous page">Student Registration Dataframe</a>
-    <a class='right-next' id="next-link" href="Student_Assessment.html" title="next page">Student Assessments</a>
+    <a class='right-next' id="next-link" href="Student_Assessment.html" title="next page">Student Assessment</a>
 
         </div>
         

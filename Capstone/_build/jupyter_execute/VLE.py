@@ -25,7 +25,7 @@ vle.head()
 
 # ---
 # 
-# ### VLE Contents
+# ## VLE Contents
 # 
 # * **id_site**: The site ID is the unique identifier for the online resource.
 # * **code_module**: The code module is the module the resource is associated with.
@@ -57,7 +57,7 @@ student_vle.head()
 
 # ---
 # 
-# ### Student VLE Contents
+# ## Student VLE Contents
 # 
 # * **code_module**: The code module is the module the resource and student are associated with.
 # * **code_presentation**: The code presentation represents the time the module was held at.
@@ -69,7 +69,7 @@ student_vle.head()
 # Since we are only interested in information that is pertinent to the student, we will be merging the VLE and Student VLE dataframes to have only the relevant information of each.
 # ```
 
-# ### Merged VLE and Student VLE Dataframe
+# ## Merged VLE and Student VLE Dataframe
 
 # In[132]:
 

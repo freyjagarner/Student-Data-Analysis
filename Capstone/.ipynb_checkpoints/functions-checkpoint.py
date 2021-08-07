@@ -71,7 +71,7 @@ def get_dupes(df):
     # if the dataframe of duplicated values is not empty return the dataframe of duplicate values
     if not df[df.duplicated()].empty:
         df_dupes = df[df.duplicated()]
-        return md(f"Duplicate Values:\n\n{boldify(df_dupes)}\n\n")
+        return df_dupes
     # else return No Duplicate Values
     else:
         return md("There are no Duplicate Values")

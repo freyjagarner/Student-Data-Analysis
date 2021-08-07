@@ -97,9 +97,9 @@ def unique_vals(df):
     # iterate through the dataframe columns
     for i in only_strings:
         # make a list of lists of unique values in relevant columns less than 25 items in length
-        unique_val_list = [[list(df[i].explode().unique()) for i in only_strings if len(df[i].explode().unique()) < 25]]
+        unique_val_list = [[list(df[i].explode().unique()) for i in only_strings if len(df[i].explode().unique()) < 250]]
         # make a list of the column names for the dataframe index
-        idx = [i for i in only_strings if len(df[i].explode().unique()) < 25]
+        idx = [i for i in only_strings if len(df[i].explode().unique()) < 250]
         # create a df using a dict mapping the values of the unique value list to a column vs a row
         unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index=idx)
         # add a range index to put the variables into a row instead of the index

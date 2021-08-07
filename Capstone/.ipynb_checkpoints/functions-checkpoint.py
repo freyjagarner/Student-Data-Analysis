@@ -49,6 +49,8 @@ vle = pd.read_csv(path+'vle.csv')
 def markdown(line, cell):
     return md(cell.format(**globals()))   
 
+# function to style dataframes as first column being bold and hiding the index
+# to bring attention to the important data
 def boldify(df):
     df = df.style.set_table_styles([{'selector': 'td.col0', 'props': 'font-weight:bold'}]).hide_index()
     return df
@@ -113,23 +115,21 @@ def count_unique(df):
 
 # function to print the unique values of each categorical column in a dataframe
 def unique_vals(df):
+    only_objects = df.select_dtypes(include=['object']).columns
     # iterate through the dataframe columns
-    for i in df.columns:
-        # find columns which are 'object' data type
-        if df[i].dtypes == object:
-            # get all of the unique values in a column
-            unique_values = df[i].explode().unique()
-            # Student ID is categorical but we don't want to return all of those
-            # so limiting to the variables where unique_vals is less than 25
-            if len(unique_values) < 25:
-                # retrieve unique values in a list from each variable
-                unique_val_list = [[df[i].explode().unique() for i in df.columns]]
-                # create a df using a dict mapping the values of the unique value list to a column vs a row
-                unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index = courses.columns)
-                # add a range index to put the variables into a row instead of the index
-                unique_vals_df = unique_vals_df.reset_index()
-                # return the dataframe 
-                return boldify(unique_vals_df)
+    for i in only_objects:
+        # make a list of lists of unique values in relevant columns less than 25 items in length
+        unique_val_list = [[df[i].explode().unique() for i in only_objects if len(df[i].explode().unique()) < 25]]
+        # make a list of the column names for the dataframe index
+        idx = [i for i in only_objects if len(df[i].explode().unique()) < 25]
+        # create a df using a dict mapping the values of the unique value list to a column vs a row
+        unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index=idx )
+        # set index name to variable
+        unique_vals_df.index.name = "Variable"
+        # add a range index to put the variables into a row instead of the index
+        unique_vals_df = unique_vals_df.reset_index()
+        # return the dataframe 
+        return boldify(unique_vals_df)
             
 
 

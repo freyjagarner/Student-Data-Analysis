@@ -74,7 +74,7 @@ def get_dupes(df):
         return md(f"Duplicate Values:\n\n{boldify(df_dupes)}\n\n")
     # else return No Duplicate Values
     else:
-        return md("No Duplicate Values")
+        return md("There are no Duplicate Values")
 
 def numerical_analysis(df):
     print(f"Size: {df.value_counts} rows")
@@ -93,15 +93,15 @@ def count_unique(df):
 
 # function to print the unique values of each categorical column in a dataframe
 def unique_vals(df):
-    only_objects = df.select_dtypes(include=['object']).columns
+    only_strings = df.select_dtypes(include=['string']).columns
     # iterate through the dataframe columns
-    for i in only_objects:
+    for i in only_strings:
         # make a list of lists of unique values in relevant columns less than 25 items in length
-        unique_val_list = [[df[i].explode().unique() for i in only_objects if len(df[i].explode().unique()) < 25]]
+        unique_val_list = [[list(df[i].explode().unique()) for i in only_strings if len(df[i].explode().unique()) < 25]]
         # make a list of the column names for the dataframe index
-        idx = [i for i in only_objects if len(df[i].explode().unique()) < 25]
+        idx = [i for i in only_strings if len(df[i].explode().unique()) < 25]
         # create a df using a dict mapping the values of the unique value list to a column vs a row
-        unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index=idx )
+        unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index=idx)
         # add a range index to put the variables into a row instead of the index
         unique_vals_df = unique_vals_df.reset_index()
         # rename index column to variable

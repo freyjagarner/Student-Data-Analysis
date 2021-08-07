@@ -177,7 +177,7 @@ student_info_reg = student_info_reg.drop(student_info_reg[(student_info_reg['dat
 student_info_reg.reset_index(drop=True).head()
 
 
-# In[19]:
+# In[22]:
 
 
 # finds the longest module length in courses and prints it
@@ -189,7 +189,7 @@ md(f'''* The longest course from module_presentation length in the courses dataf
 
 # **All Students with an unregistration point after 269 days:**
 
-# In[20]:
+# In[23]:
 
 
 # finding students whose courses went on for longer than the maximum course length

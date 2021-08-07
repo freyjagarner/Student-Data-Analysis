@@ -460,33 +460,63 @@ dtype: int64
 <p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
-
-code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#39;]
-
-id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
-
-region: [&#39;East Anglian Region&#39; &#39;Scotland&#39; &#39;North Western Region&#39;
- &#39;South East Region&#39; &#39;West Midlands Region&#39; &#39;Wales&#39; &#39;North Region&#39;
- &#39;South Region&#39; &#39;Ireland&#39; &#39;South West Region&#39; &#39;East Midlands Region&#39;
- &#39;Yorkshire Region&#39; &#39;London Region&#39;]
-
-imd_band: [&#39;90-100%&#39; &#39;20-30%&#39; &#39;30-40%&#39; &#39;50-60%&#39; &#39;80-90%&#39; &#39;70-80%&#39; nan &#39;60-70%&#39;
- &#39;40-50%&#39; &#39;10-20&#39; &#39;0-10%&#39;]
-
-age_band: [&#39;55&lt;=&#39; &#39;35-55&#39; &#39;0-35&#39;]
-
-gender: [&#39;M&#39; &#39;F&#39;]
-
-highest_education: [&#39;HE Qualification&#39; &#39;A Level or Equivalent&#39; &#39;Lower Than A Level&#39;
- &#39;Post Graduate Qualification&#39; &#39;No Formal quals&#39;]
-
-disability: [&#39;N&#39; &#39;Y&#39;]
-
-final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinction&#39;]
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_3d3b2_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_3d3b2_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_3d3b2_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_3d3b2_row0_col1" class="data row0 col1" >['AAA' 'BBB' 'CCC' 'DDD' 'EEE' 'FFF' 'GGG']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_3d3b2_row1_col1" class="data row1 col1" >['2013J' '2014J' '2013B' '2014B']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row2_col0" class="data row2 col0" >region</td>
+      <td id="T_3d3b2_row2_col1" class="data row2 col1" >['East Anglian Region' 'Scotland' 'North Western Region'
+ 'South East Region' 'West Midlands Region' 'Wales' 'North Region'
+ 'South Region' 'Ireland' 'South West Region' 'East Midlands Region'
+ 'Yorkshire Region' 'London Region']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row3_col0" class="data row3 col0" >imd_band</td>
+      <td id="T_3d3b2_row3_col1" class="data row3 col1" >['90-100%' '20-30%' '30-40%' '50-60%' '80-90%' '70-80%' nan '60-70%'
+ '40-50%' '10-20' '0-10%']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row4_col0" class="data row4 col0" >age_band</td>
+      <td id="T_3d3b2_row4_col1" class="data row4 col1" >['55<=' '35-55' '0-35']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row5_col0" class="data row5 col0" >gender</td>
+      <td id="T_3d3b2_row5_col1" class="data row5 col1" >['M' 'F']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row6_col0" class="data row6 col0" >highest_education</td>
+      <td id="T_3d3b2_row6_col1" class="data row6 col1" >['HE Qualification' 'A Level or Equivalent' 'Lower Than A Level'
+ 'Post Graduate Qualification' 'No Formal quals']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row7_col0" class="data row7 col0" >disability</td>
+      <td id="T_3d3b2_row7_col1" class="data row7 col1" >['N' 'Y']</td>
+    </tr>
+    <tr>
+      <td id="T_3d3b2_row8_col0" class="data row8 col0" >final_result</td>
+      <td id="T_3d3b2_row8_col1" class="data row8 col1" >['Pass' 'Withdrawn' 'Fail' 'Distinction']</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <p>In imd_band the % sign is missing in 10-20. We will add that for consistency and clarity</p>
 <div class="cell docutils container">
@@ -507,7 +537,12 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 <p><strong>Duplicate Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No Duplicate Values&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_26188</span><span class="o">/</span><span class="mf">3883904236.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">analyze_df</span><span class="p">(</span><span class="n">student_info_reg</span><span class="p">,</span> <span class="n">dupes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;analyze_df&#39; is not defined
 </pre></div>
 </div>
 </div>

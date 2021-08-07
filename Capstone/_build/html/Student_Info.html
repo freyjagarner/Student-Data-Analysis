@@ -230,8 +230,13 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   Contents
+  <a class="reference internal nav-link" href="#general">
+   General
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-info-contents">
+   Student Info Contents
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -253,6 +258,8 @@
   <div class="section" id="student-info">
 <h1>Student Info<a class="headerlink" href="#student-info" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
 <p>The student info dataframe contains information about students including the module and presentation they took, demographic information and the final result of their studies.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -368,8 +375,9 @@
 </table>
 </div></div></div>
 </div>
-<div class="section" id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="student-info-contents">
+<h2>Student Info Contents<a class="headerlink" href="#student-info-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>code_module</strong>: The code module represents the course the student is taking.</p></li>
 <li><p><strong>code_presentation</strong>: The code presentations are the year and semester the student is taking the course.</p></li>
@@ -407,88 +415,475 @@
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>studied_credits will not be a part of our analysis and will be removed</p></li>
+<li><p>num_of_prev_attempts will be changed to prev_attempts to save space</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># student_info = student_info.drop(columns=&#39;studied_credits&#39;)</span>
+<span class="n">student_info</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;num_of_prev_attempts&#39;</span><span class="p">:</span><span class="s1">&#39;prev_attempts&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code_module</th>
+      <th>code_presentation</th>
+      <th>id_student</th>
+      <th>gender</th>
+      <th>region</th>
+      <th>highest_education</th>
+      <th>imd_band</th>
+      <th>age_band</th>
+      <th>prev_attempts</th>
+      <th>studied_credits</th>
+      <th>disability</th>
+      <th>final_result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>11391</td>
+      <td>M</td>
+      <td>East Anglian Region</td>
+      <td>HE Qualification</td>
+      <td>90-100%</td>
+      <td>55&lt;=</td>
+      <td>0</td>
+      <td>240</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>28400</td>
+      <td>F</td>
+      <td>Scotland</td>
+      <td>HE Qualification</td>
+      <td>20-30%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>30268</td>
+      <td>F</td>
+      <td>North Western Region</td>
+      <td>A Level or Equivalent</td>
+      <td>30-40%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>Y</td>
+      <td>Withdrawn</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>31604</td>
+      <td>F</td>
+      <td>South East Region</td>
+      <td>A Level or Equivalent</td>
+      <td>50-60%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AAA</td>
+      <td>2013J</td>
+      <td>32885</td>
+      <td>F</td>
+      <td>West Midlands Region</td>
+      <td>Lower Than A Level</td>
+      <td>50-60%</td>
+      <td>0-35</td>
+      <td>0</td>
+      <td>60</td>
+      <td>N</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>32588</th>
+      <td>GGG</td>
+      <td>2014J</td>
+      <td>2640965</td>
+      <td>F</td>
+      <td>Wales</td>
+      <td>Lower Than A Level</td>
+      <td>10-20</td>
+      <td>0-35</td>
+      <td>0</td>
+      <td>30</td>
+      <td>N</td>
+      <td>Fail</td>
+    </tr>
+    <tr>
+      <th>32589</th>
+      <td>GGG</td>
+      <td>2014J</td>
+      <td>2645731</td>
+      <td>F</td>
+      <td>East Anglian Region</td>
+      <td>Lower Than A Level</td>
+      <td>40-50%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>30</td>
+      <td>N</td>
+      <td>Distinction</td>
+    </tr>
+    <tr>
+      <th>32590</th>
+      <td>GGG</td>
+      <td>2014J</td>
+      <td>2648187</td>
+      <td>F</td>
+      <td>South Region</td>
+      <td>A Level or Equivalent</td>
+      <td>20-30%</td>
+      <td>0-35</td>
+      <td>0</td>
+      <td>30</td>
+      <td>Y</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <th>32591</th>
+      <td>GGG</td>
+      <td>2014J</td>
+      <td>2679821</td>
+      <td>F</td>
+      <td>South East Region</td>
+      <td>Lower Than A Level</td>
+      <td>90-100%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>30</td>
+      <td>N</td>
+      <td>Withdrawn</td>
+    </tr>
+    <tr>
+      <th>32592</th>
+      <td>GGG</td>
+      <td>2014J</td>
+      <td>2684003</td>
+      <td>F</td>
+      <td>Yorkshire Region</td>
+      <td>HE Qualification</td>
+      <td>50-60%</td>
+      <td>35-55</td>
+      <td>0</td>
+      <td>30</td>
+      <td>N</td>
+      <td>Distinction</td>
+    </tr>
+  </tbody>
+</table>
+<p>32593 rows × 12 columns</p>
+</div></div></div>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="student-info-information">
 <h2>Student Info Information<a class="headerlink" href="#student-info-information" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<p><strong>Size</strong></p>
-<ul class="simple">
-<li><p>Number of Rows: 32593</p></li>
-<li><p>Number of Columns: 12</p></li>
-</ul>
-<p><strong>Data Types</strong></p>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Columns</th>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Rows</th>
+      <td>32593</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             object
-code_presentation       object
-id_student               int64
-gender                  object
-region                  object
-highest_education       object
-imd_band                object
-age_band                object
-num_of_prev_attempts     int64
-studied_credits          int64
-disability              object
-final_result            object
-dtype: object
-</pre></div>
+<div class="output text_html"><style type="text/css">
+#T_6a378_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_6a378_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_6a378_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_6a378_row0_col1" class="data row0 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_6a378_row1_col1" class="data row1 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row2_col0" class="data row2 col0" >id_student</td>
+      <td id="T_6a378_row2_col1" class="data row2 col1" >int64</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row3_col0" class="data row3 col0" >gender</td>
+      <td id="T_6a378_row3_col1" class="data row3 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row4_col0" class="data row4 col0" >region</td>
+      <td id="T_6a378_row4_col1" class="data row4 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row5_col0" class="data row5 col0" >highest_education</td>
+      <td id="T_6a378_row5_col1" class="data row5 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row6_col0" class="data row6 col0" >imd_band</td>
+      <td id="T_6a378_row6_col1" class="data row6 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row7_col0" class="data row7 col0" >age_band</td>
+      <td id="T_6a378_row7_col1" class="data row7 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row8_col0" class="data row8 col0" >num_of_prev_attempts</td>
+      <td id="T_6a378_row8_col1" class="data row8 col1" >int64</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row9_col0" class="data row9 col0" >studied_credits</td>
+      <td id="T_6a378_row9_col1" class="data row9 col1" >int64</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row10_col0" class="data row10 col0" >disability</td>
+      <td id="T_6a378_row10_col1" class="data row10 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_6a378_row11_col0" class="data row11 col0" >final_result</td>
+      <td id="T_6a378_row11_col1" class="data row11 col1" >object</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
-</div>
-</div>
-<ul class="simple">
-<li><p>id_student is currently an int64 datatype, but would be more appropriate as an object data type since it is categorical.</p></li>
-</ul>
+<p><code class="docutils literal notranslate"><span class="pre">id_student</span></code> is currently an int64 datatype, but would be more appropriate as an object data type since it is categorical.</p>
 <p><strong>Null Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                0
-code_presentation          0
-id_student                 0
-gender                     0
-region                     0
-highest_education          0
-imd_band                1111
-age_band                   0
-num_of_prev_attempts       0
-studied_credits            0
-disability                 0
-final_result               0
-dtype: int64
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_24106_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_24106_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Null Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_24106_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_24106_row0_col1" class="data row0 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_24106_row1_col1" class="data row1 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row2_col0" class="data row2 col0" >id_student</td>
+      <td id="T_24106_row2_col1" class="data row2 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row3_col0" class="data row3 col0" >gender</td>
+      <td id="T_24106_row3_col1" class="data row3 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row4_col0" class="data row4 col0" >region</td>
+      <td id="T_24106_row4_col1" class="data row4 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row5_col0" class="data row5 col0" >highest_education</td>
+      <td id="T_24106_row5_col1" class="data row5 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row6_col0" class="data row6 col0" >imd_band</td>
+      <td id="T_24106_row6_col1" class="data row6 col1" >1111</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row7_col0" class="data row7 col0" >age_band</td>
+      <td id="T_24106_row7_col1" class="data row7 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row8_col0" class="data row8 col0" >num_of_prev_attempts</td>
+      <td id="T_24106_row8_col1" class="data row8 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row9_col0" class="data row9 col0" >studied_credits</td>
+      <td id="T_24106_row9_col1" class="data row9 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row10_col0" class="data row10 col0" >disability</td>
+      <td id="T_24106_row10_col1" class="data row10 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_24106_row11_col0" class="data row11 col0" >final_result</td>
+      <td id="T_24106_row11_col1" class="data row11 col1" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<ul class="simple">
-<li><p>The imd_band variable has 1111 null values which we may have to work around.</p></li>
-</ul>
+<p>The imd_band variable has 1111 null values which we may have to work around.</p>
+</div>
+</div>
+<p><strong>Duplicate Values</strong></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<p>No Duplicate Values</p>
 </div>
 </div>
 <p><strong>Unique Counts:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                 7
-code_presentation           4
-id_student              28785
-gender                      2
-region                     13
-highest_education           5
-imd_band                   10
-age_band                    3
-num_of_prev_attempts        7
-studied_credits            61
-disability                  2
-final_result                4
-dtype: int64
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_a3bd2_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_a3bd2_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_a3bd2_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_a3bd2_row0_col1" class="data row0 col1" >7</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_a3bd2_row1_col1" class="data row1 col1" >4</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row2_col0" class="data row2 col0" >id_student</td>
+      <td id="T_a3bd2_row2_col1" class="data row2 col1" >28785</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row3_col0" class="data row3 col0" >gender</td>
+      <td id="T_a3bd2_row3_col1" class="data row3 col1" >2</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row4_col0" class="data row4 col0" >region</td>
+      <td id="T_a3bd2_row4_col1" class="data row4 col1" >13</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row5_col0" class="data row5 col0" >highest_education</td>
+      <td id="T_a3bd2_row5_col1" class="data row5 col1" >5</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row6_col0" class="data row6 col0" >imd_band</td>
+      <td id="T_a3bd2_row6_col1" class="data row6 col1" >10</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row7_col0" class="data row7 col0" >age_band</td>
+      <td id="T_a3bd2_row7_col1" class="data row7 col1" >3</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row8_col0" class="data row8 col0" >num_of_prev_attempts</td>
+      <td id="T_a3bd2_row8_col1" class="data row8 col1" >7</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row9_col0" class="data row9 col0" >studied_credits</td>
+      <td id="T_a3bd2_row9_col1" class="data row9 col1" >61</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row10_col0" class="data row10 col0" >disability</td>
+      <td id="T_a3bd2_row10_col1" class="data row10 col1" >2</td>
+    </tr>
+    <tr>
+      <td id="T_a3bd2_row11_col0" class="data row11 col0" >final_result</td>
+      <td id="T_a3bd2_row11_col1" class="data row11 col1" >4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -501,58 +896,65 @@ dtype: int64
 <p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
-
-code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#39;]
-
-id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
-
-gender: [&#39;M&#39; &#39;F&#39;]
-
-region: [&#39;East Anglian Region&#39; &#39;Scotland&#39; &#39;North Western Region&#39;
- &#39;South East Region&#39; &#39;West Midlands Region&#39; &#39;Wales&#39; &#39;North Region&#39;
- &#39;South Region&#39; &#39;Ireland&#39; &#39;South West Region&#39; &#39;East Midlands Region&#39;
- &#39;Yorkshire Region&#39; &#39;London Region&#39;]
-
-highest_education: [&#39;HE Qualification&#39; &#39;A Level or Equivalent&#39; &#39;Lower Than A Level&#39;
- &#39;Post Graduate Qualification&#39; &#39;No Formal quals&#39;]
-
-imd_band: [&#39;90-100%&#39; &#39;20-30%&#39; &#39;30-40%&#39; &#39;50-60%&#39; &#39;80-90%&#39; &#39;70-80%&#39; nan &#39;60-70%&#39;
- &#39;40-50%&#39; &#39;10-20&#39; &#39;0-10%&#39;]
-
-age_band: [&#39;55&lt;=&#39; &#39;35-55&#39; &#39;0-35&#39;]
-
-disability: [&#39;N&#39; &#39;Y&#39;]
-
-final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinction&#39;]
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_ef7b1_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_ef7b1_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_ef7b1_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_ef7b1_row0_col1" class="data row0 col1" >['AAA' 'BBB' 'CCC' 'DDD' 'EEE' 'FFF' 'GGG']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_ef7b1_row1_col1" class="data row1 col1" >['2013J' '2014J' '2013B' '2014B']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row2_col0" class="data row2 col0" >gender</td>
+      <td id="T_ef7b1_row2_col1" class="data row2 col1" >['M' 'F']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row3_col0" class="data row3 col0" >region</td>
+      <td id="T_ef7b1_row3_col1" class="data row3 col1" >['East Anglian Region' 'Scotland' 'North Western Region'
+ 'South East Region' 'West Midlands Region' 'Wales' 'North Region'
+ 'South Region' 'Ireland' 'South West Region' 'East Midlands Region'
+ 'Yorkshire Region' 'London Region']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row4_col0" class="data row4 col0" >highest_education</td>
+      <td id="T_ef7b1_row4_col1" class="data row4 col1" >['HE Qualification' 'A Level or Equivalent' 'Lower Than A Level'
+ 'Post Graduate Qualification' 'No Formal quals']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row5_col0" class="data row5 col0" >imd_band</td>
+      <td id="T_ef7b1_row5_col1" class="data row5 col1" >['90-100%' '20-30%' '30-40%' '50-60%' '80-90%' '70-80%' nan '60-70%'
+ '40-50%' '10-20' '0-10%']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row6_col0" class="data row6 col0" >age_band</td>
+      <td id="T_ef7b1_row6_col1" class="data row6 col1" >['55<=' '35-55' '0-35']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row7_col0" class="data row7 col0" >disability</td>
+      <td id="T_ef7b1_row7_col1" class="data row7 col1" >['N' 'Y']</td>
+    </tr>
+    <tr>
+      <td id="T_ef7b1_row8_col0" class="data row8 col0" >final_result</td>
+      <td id="T_ef7b1_row8_col1" class="data row8 col1" >['Pass' 'Withdrawn' 'Fail' 'Distinction']</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <p>In imd_band the % sign is missing in 10-20. We will add that for consistency and clarity</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changing all 10-20 values in student_info imd_band to 10-20% for consistency&#39;s sake</span>
-<span class="n">student_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;imd_band&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;10-20&#39;</span><span class="p">,</span> <span class="s1">&#39;imd_band&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;10-20%&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;imd_band&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;90-100%&#39; &#39;20-30%&#39; &#39;30-40%&#39; &#39;50-60%&#39; &#39;80-90%&#39; &#39;70-80%&#39; nan &#39;60-70%&#39;
- &#39;40-50%&#39; &#39;10-20%&#39; &#39;0-10%&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Duplicate Values</strong></p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No Duplicate Values&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <p><strong>Statistics:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -625,17 +1027,18 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_attempts</span> <span class="o">=</span> <span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;num_of_prev_attempts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># store the highest number of module previous attempts by students</span>
+<span class="n">max_attempts</span> <span class="o">=</span> <span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;num_of_prev_attempts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">markdown</span>
-
-* Most students do not have a previous attempt, but there is a high of {max_attempts} attempts.
-* We can only have data for up to two of the students attempts since we only have two years worth of data.
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">* Most students do not have a previous attempt, but there is a high of </span><span class="si">{</span><span class="n">max_attempts</span><span class="si">}</span><span class="s1"> attempts.</span>
+<span class="s1">* We can only have data for up to two of the students attempts since we only have two years worth of data.</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -645,239 +1048,6 @@ final_result: [&#39;Pass&#39; &#39;Withdrawn&#39; &#39;Fail&#39; &#39;Distinctio
 <li><p>We can only have data for up to two of the students attempts since we only have two years worth of data.</p></li>
 </ul>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;code_module&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;code_presentation&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;Greens_d&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">student_info</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Student_Info_28_0.png" src="_images/Student_Info_28_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students_per_presentation_module</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;id_student&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;code_module&#39;</span><span class="p">],</span> <span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">count</span><span class="p">())</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">students_per_presentation_module</span> <span class="o">=</span> <span class="n">students_per_presentation_module</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">,</span> <span class="s1">&#39;code_module&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span><span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;month&#39;</span><span class="p">]</span> <span class="o">=</span><span class="n">students_per_presentation_module</span><span class="p">[</span><span class="s1">&#39;code_presentation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students_per_presentation_module</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>code_module</th>
-      <th>code_presentation</th>
-      <th>id_student</th>
-      <th>year</th>
-      <th>month</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>BBB</td>
-      <td>2013B</td>
-      <td>1767</td>
-      <td>2013</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>DDD</td>
-      <td>2013B</td>
-      <td>1303</td>
-      <td>2013</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>FFF</td>
-      <td>2013B</td>
-      <td>1614</td>
-      <td>2013</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AAA</td>
-      <td>2013J</td>
-      <td>383</td>
-      <td>2013</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>BBB</td>
-      <td>2013J</td>
-      <td>2237</td>
-      <td>2013</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>DDD</td>
-      <td>2013J</td>
-      <td>1938</td>
-      <td>2013</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>EEE</td>
-      <td>2013J</td>
-      <td>1052</td>
-      <td>2013</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>FFF</td>
-      <td>2013J</td>
-      <td>2283</td>
-      <td>2013</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>GGG</td>
-      <td>2013J</td>
-      <td>952</td>
-      <td>2013</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>BBB</td>
-      <td>2014B</td>
-      <td>1613</td>
-      <td>2014</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>CCC</td>
-      <td>2014B</td>
-      <td>1936</td>
-      <td>2014</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>DDD</td>
-      <td>2014B</td>
-      <td>1228</td>
-      <td>2014</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>EEE</td>
-      <td>2014B</td>
-      <td>694</td>
-      <td>2014</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>FFF</td>
-      <td>2014B</td>
-      <td>1500</td>
-      <td>2014</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>GGG</td>
-      <td>2014B</td>
-      <td>833</td>
-      <td>2014</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>AAA</td>
-      <td>2014J</td>
-      <td>365</td>
-      <td>2014</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>BBB</td>
-      <td>2014J</td>
-      <td>2292</td>
-      <td>2014</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>CCC</td>
-      <td>2014J</td>
-      <td>2498</td>
-      <td>2014</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>DDD</td>
-      <td>2014J</td>
-      <td>1803</td>
-      <td>2014</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>EEE</td>
-      <td>2014J</td>
-      <td>1188</td>
-      <td>2014</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>FFF</td>
-      <td>2014J</td>
-      <td>2365</td>
-      <td>2014</td>
-      <td>J</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>GGG</td>
-      <td>2014J</td>
-      <td>749</td>
-      <td>2014</td>
-      <td>J</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 </div>

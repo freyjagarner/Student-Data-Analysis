@@ -18,6 +18,7 @@ from functions import *
 # In[2]:
 
 
+# show head of courses dataframe
 courses.head()
 
 
@@ -38,6 +39,7 @@ courses.head()
 # In[3]:
 
 
+# get row & column count for courses dataframe
 get_size(courses)
 
 
@@ -46,6 +48,7 @@ get_size(courses)
 # In[4]:
 
 
+# show data types for courses dataframe
 get_dtypes(courses)
 
 
@@ -54,31 +57,35 @@ get_dtypes(courses)
 # In[5]:
 
 
+# show null values for columns in courses
 null_vals(courses)
-
-
-# **Unique Counts:**
-
-# In[6]:
-
-
-dataframe(courses.nunique(), columns=['Count']).reset_index()
-
-
-# **Unique Categorical Values**:
-
-# In[7]:
-
-
-unique_vals(courses)
 
 
 # **Duplicate Values**
 
+# In[6]:
+
+
+# show duplicate values in courses if any
+get_dupes(courses)
+
+
+# **Unique Counts:**
+
+# In[7]:
+
+
+# get counts for the unque values in courses columns
+count_unique(courses)
+
+
+# **Unique Categorical Values**:
+
 # In[8]:
 
 
-get_dupes(courses)
+# get the unique categorical values in courses
+unique_vals(courses)
 
 
 # **Statistics:**
@@ -86,6 +93,7 @@ get_dupes(courses)
 # In[9]:
 
 
+# show statistical breakdown of numerical values in courses
 courses.describe().round(1)
 
 
@@ -96,13 +104,18 @@ courses.describe().round(1)
 # In[10]:
 
 
+# store the number of unique modules
 mod_count = courses['code_module'].nunique()
+# store the number of unique presentations
 presentation_count = courses['code_presentation'].nunique()
+# store the minimum module length in days
 min_mod_count = courses['module_presentation_length'].min()
+# store the maximum module length in dats
 max_mod_count = courses['module_presentation_length'].max()
+# store the average module length in days
 avg_mod_count = round(courses['module_presentation_length'].mean(), 1)
 
-md(f'''* There are {mod_count} unique modules delivered over {presentation_count} presentations as detailed below:''')
+md(f'''There are {mod_count} unique modules delivered over {presentation_count} presentations as detailed below:''')
 
 
 # In[11]:
@@ -115,18 +128,12 @@ pd.crosstab(index=courses['code_module'], columns=courses['code_presentation'])
 # In[12]:
 
 
-md("""
+md(f"""
 ## Module Presentation Length
 
 * Modules range from {min_mod_count} to {max_mod_count} days in length.
 * The average module is {avg_mod_count} days.
 """)
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:

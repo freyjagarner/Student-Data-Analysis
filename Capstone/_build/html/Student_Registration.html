@@ -230,8 +230,13 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contents">
-   Contents
+  <a class="reference internal nav-link" href="#general">
+   General
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-registration-contents">
+   Student Registration Contents
   </a>
  </li>
 </ul>
@@ -248,16 +253,9 @@
   <div class="section" id="student-registration-dataframe">
 <h1>Student Registration Dataframe<a class="headerlink" href="#student-registration-dataframe" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
 <p>The student registration dataframe contains information about the dates that students registered and,if applicable, unregistered from the module.</p>
-<div class="section" id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>code_module</strong>: The code module represents the course which the sutdent registered for.</p></li>
-<li><p><strong>code_presentation</strong>: The code presentation represents the time of year the course which the student registered for began.</p></li>
-<li><p><strong>id_student</strong>: The student ID is the unique identifier for each student.</p></li>
-<li><p><strong>date_registration</strong>: The registration date is the date that the student registered for the module relative to the start of the module. A negative value indicates that many days before the module began.</p></li>
-<li><p><strong>date_unregistration</strong>: The unregistration date is the date that the student unregistered from the course module in relation to the start date of the course, if applicable.</p></li>
-</ul>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -330,27 +328,92 @@
 </table>
 </div></div></div>
 </div>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<p><strong>Size</strong></p>
+</div>
+<div class="section" id="student-registration-contents">
+<h2>Student Registration Contents<a class="headerlink" href="#student-registration-contents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Number of Rows: 32593</p></li>
-<li><p>Number of Columns: 5</p></li>
+<li><p><strong>code_module</strong>: The code module represents the course which the sutdent registered for.</p></li>
+<li><p><strong>code_presentation</strong>: The code presentation represents the time of year the course which the student registered for began.</p></li>
+<li><p><strong>id_student</strong>: The student ID is the unique identifier for each student.</p></li>
+<li><p><strong>date_registration</strong>: The registration date is the date that the student registered for the module relative to the start of the module. A negative value indicates that many days before the module began.</p></li>
+<li><p><strong>date_unregistration</strong>: The unregistration date is the date that the student unregistered from the course module in relation to the start date of the course, if applicable.</p></li>
 </ul>
-<p><strong>Data Types</strong></p>
-</div>
-</div>
+<p><strong>Size</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module             object
-code_presentation       object
-id_student               int64
-date_registration      float64
-date_unregistration    float64
-dtype: object
-</pre></div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Columns</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Rows</th>
+      <td>32593</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
+<p><strong>Data Types</strong></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_125b5_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_125b5_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_125b5_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_125b5_row0_col1" class="data row0 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_125b5_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_125b5_row1_col1" class="data row1 col1" >object</td>
+    </tr>
+    <tr>
+      <td id="T_125b5_row2_col0" class="data row2 col0" >id_student</td>
+      <td id="T_125b5_row2_col1" class="data row2 col1" >int64</td>
+    </tr>
+    <tr>
+      <td id="T_125b5_row3_col0" class="data row3 col0" >date_registration</td>
+      <td id="T_125b5_row3_col1" class="data row3 col1" >float64</td>
+    </tr>
+    <tr>
+      <td id="T_125b5_row4_col0" class="data row4 col0" >date_unregistration</td>
+      <td id="T_125b5_row4_col1" class="data row4 col1" >float64</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <ul class="simple">
 <li><p>id_student is currently an int64 datatype, but would be more appropriate as an object data type since it is categorical.</p></li>
@@ -360,15 +423,42 @@ dtype: object
 <p><strong>Null Values:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                0
-code_presentation          0
-id_student                 0
-date_registration         45
-date_unregistration    22521
-dtype: int64
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_91474_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_91474_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Null Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_91474_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_91474_row0_col1" class="data row0 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_91474_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_91474_row1_col1" class="data row1 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_91474_row2_col0" class="data row2 col0" >id_student</td>
+      <td id="T_91474_row2_col1" class="data row2 col1" >0</td>
+    </tr>
+    <tr>
+      <td id="T_91474_row3_col0" class="data row3 col0" >date_registration</td>
+      <td id="T_91474_row3_col1" class="data row3 col1" >45</td>
+    </tr>
+    <tr>
+      <td id="T_91474_row4_col0" class="data row4 col0" >date_unregistration</td>
+      <td id="T_91474_row4_col1" class="data row4 col1" >22521</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
@@ -378,54 +468,79 @@ dtype: int64
 </ul>
 </div>
 </div>
+<p><strong>Duplicate Values</strong></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<p>No Duplicate Values</p>
+</div>
+</div>
 <p><strong>Unique Counts:</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module                7
-code_presentation          4
-id_student             28785
-date_registration        332
-date_unregistration      416
-dtype: int64
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_b818e_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_b818e_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_b818e_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_b818e_row0_col1" class="data row0 col1" >7</td>
+    </tr>
+    <tr>
+      <td id="T_b818e_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_b818e_row1_col1" class="data row1 col1" >4</td>
+    </tr>
+    <tr>
+      <td id="T_b818e_row2_col0" class="data row2 col0" >id_student</td>
+      <td id="T_b818e_row2_col1" class="data row2 col1" >28785</td>
+    </tr>
+    <tr>
+      <td id="T_b818e_row3_col0" class="data row3 col0" >date_registration</td>
+      <td id="T_b818e_row3_col1" class="data row3 col1" >332</td>
+    </tr>
+    <tr>
+      <td id="T_b818e_row4_col0" class="data row4 col0" >date_unregistration</td>
+      <td id="T_b818e_row4_col1" class="data row4 col1" >416</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <p><strong>Unique Categorical Values</strong></p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>code_module: [&#39;AAA&#39; &#39;BBB&#39; &#39;CCC&#39; &#39;DDD&#39; &#39;EEE&#39; &#39;FFF&#39; &#39;GGG&#39;]
-
-code_presentation: [&#39;2013J&#39; &#39;2014J&#39; &#39;2013B&#39; &#39;2014B&#39;]
-
-id_student: [11391 28400 30268 ... 2648187 2679821 2684003]
-</pre></div>
-</div>
-</div>
-</div>
-<p>In imd_band the % sign is missing in 10-20. We will add that for consistency and clarity</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># changing all 10-20 values in student_info imd_band to 10-20% for consistency&#39;s sake</span>
-<span class="n">student_info</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;imd_band&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;10-20&#39;</span><span class="p">,</span> <span class="s1">&#39;imd_band&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;10-20%&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">student_info</span><span class="p">[</span><span class="s1">&#39;imd_band&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;90-100%&#39; &#39;20-30%&#39; &#39;30-40%&#39; &#39;50-60%&#39; &#39;80-90%&#39; &#39;70-80%&#39; nan &#39;60-70%&#39;
- &#39;40-50%&#39; &#39;10-20%&#39; &#39;0-10%&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Duplicate Values</strong></p>
-<div class="cell tag_remove_input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;No Duplicate Values&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_0a3f3_ td.col0 {
+  font-weight: bold;
+}
+</style>
+<table id="T_0a3f3_">
+  <thead>
+    <tr>
+      <th class="col_heading level0 col0" >index</th>
+      <th class="col_heading level0 col1" >Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_0a3f3_row0_col0" class="data row0 col0" >code_module</td>
+      <td id="T_0a3f3_row0_col1" class="data row0 col1" >['AAA' 'BBB' 'CCC' 'DDD' 'EEE' 'FFF' 'GGG']</td>
+    </tr>
+    <tr>
+      <td id="T_0a3f3_row1_col0" class="data row1 col0" >code_presentation</td>
+      <td id="T_0a3f3_row1_col1" class="data row1 col1" >['2013J' '2014J' '2013B' '2014B']</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

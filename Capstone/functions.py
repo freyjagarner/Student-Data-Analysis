@@ -23,28 +23,6 @@ student_assessment = pd.read_csv(path+'studentAssessment.csv')
 student_vle = pd.read_csv(path+'studentVle.csv')
 vle = pd.read_csv(path+'vle.csv')
 
-
-
-# a function to print some basic analysis of dataframes
-'''def analyze_df(df, rowlen=False, collen=False, types=False, nulls=False, uniques=False, dupes=False, nums=False):
-    if types:
-        # print dataframe column data types
-        return df.dtypes
-    elif nulls:
-        # print which columns have null values and how many
-        df.isnull().sum()
-    elif uniques:
-        # print the number of unique values per variable in data
-        return df.nunique()
-    # print duplicate values if there are any else prints "No Duplicate Values"
-    elif dupes:
-        if not df[df.duplicated()].empty:
-            return df[df.duplicated()]
-        else:
-            return "No Duplicate Values"
-    elif nums:
-        return df.describe()'''
-
 @register_cell_magic
 def markdown(line, cell):
     return md(cell.format(**globals()))   
@@ -59,8 +37,8 @@ def null_vals(df):
     # if the dataframe of nulls is not empty return the null values as a dataframe
     if not df[df.isnull()].empty:
         df_nulls = dataframe(df.isnull().sum(), columns=['Null Values'])
-        df_nulls.index.name = "Variable"
         df_nulls = df_nulls.reset_index()
+        df_nulls.rename(columns={'index':'Variable'})
         return boldify(df_nulls)
     else:
         return md("No Null Values")
@@ -70,10 +48,10 @@ def get_dtypes(df):
     # make a dataframe out of datatypes
     df_dtypes = dataframe(df.dtypes, columns=['Type'])
     # index is automatically the column variables
-    # set index name to variable
-    df_dtypes.index.name = "Variable"
     # make index into a range index so Variable can be a column
     df_dtypes = df_dtypes.reset_index()
+    # set index column name to variable
+    df_dtypes.rename(columns={'index':'Variable'})
     # return data types dataframe
     return boldify(df_dtypes)
     
@@ -124,10 +102,10 @@ def unique_vals(df):
         idx = [i for i in only_objects if len(df[i].explode().unique()) < 25]
         # create a df using a dict mapping the values of the unique value list to a column vs a row
         unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index=idx )
-        # set index name to variable
-        unique_vals_df.index.name = "Variable"
         # add a range index to put the variables into a row instead of the index
         unique_vals_df = unique_vals_df.reset_index()
+        # rename index column to variable
+        unique_vals_df.rename(columns={'index':'Variable'})
         # return the dataframe 
         return boldify(unique_vals_df)
             

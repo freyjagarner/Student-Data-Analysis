@@ -10,6 +10,8 @@ from IPython.display import Markdown as md
 from IPython.core.magic import register_cell_magic
 from IPython.display import HTML
 import random
+import rpy2.robjects as robjects
+from rpy2.robjects import pandas2ri
 
 # setting the path to the csv files
 path = os.path.join(os.path.abspath(os.getcwd()), 'csvs\\')

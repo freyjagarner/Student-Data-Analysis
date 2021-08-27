@@ -4,7 +4,6 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn import linear_model
 
 # import itertools
 
@@ -90,13 +89,13 @@ def count_unique(df):
 
 # function to print the unique values of each categorical column in a dataframe
 def unique_vals(df):
-    only_strings = df.select_dtypes(include=['string']).columns
+    only_categories = df.select_dtypes(include=['category']).columns
     # iterate through the dataframe columns
-    for i in only_strings:
+    for i in only_categories:
         # make a list of lists of unique values in relevant columns less than 25 items in length
-        unique_val_list = [[list(df[i].explode().unique()) for i in only_strings if len(df[i].explode().unique()) < 250]]
+        unique_val_list = [[list(df[i].explode().unique()) for i in only_categories if len(df[i].explode().unique()) < 250]]
         # make a list of the column names for the dataframe index
-        idx = [i for i in only_strings if len(df[i].explode().unique()) < 250]
+        idx = [i for i in only_categories if len(df[i].explode().unique()) < 250]
         # create a df using a dict mapping the values of the unique value list to a column vs a row
         unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index=idx)
         # add a range index to put the variables into a row instead of the index
@@ -106,7 +105,10 @@ def unique_vals(df):
         # return the dataframe 
         return boldify(unique_vals_df)
             
-
+def classify_results(df):
+    df = df.assign(result_class=False)
+    df.loc[(df['result'] == 'Pass') | (df['result'] == 'Distinction'), 'result_class'] = True
+    return df
 
 # a function to change dataframe column values based on a given dictionary
 def change_col_val(val_dict, df):

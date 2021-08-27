@@ -2,14 +2,16 @@
 import pandas as pd
 import numpy as np
 import os
-from sklearn import linear_model
-import seaborn as sns
-import itertools
 import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn import linear_model
+
+# import itertools
+
 from IPython.display import Markdown as md
 from IPython.core.magic import register_cell_magic
-from IPython.display import HTML
-import random
+# from IPython.display import HTML
+# import random
 
 # setting the path to the csv files
 path = os.path.join(os.path.abspath(os.getcwd()), 'csvs\\')
@@ -75,11 +77,6 @@ def get_dupes(df):
     # else return No Duplicate Values
     else:
         return md("There are no Duplicate Values")
-
-def numerical_analysis(df):
-    print(f"Size: {df.value_counts} rows")
-    print(f"Numerical Variable Analysis:\n\n")
-    df.describe()
 
 
 # function to makea  dataframe of the counts of unique values in columns

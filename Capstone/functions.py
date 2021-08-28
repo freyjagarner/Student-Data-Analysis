@@ -2,16 +2,15 @@
 import pandas as pd
 import numpy as np
 import os
-from sklearn import linear_model
-import seaborn as sns
-import itertools
 import matplotlib.pyplot as plt
+import seaborn as sns
+
+# import itertools
+
 from IPython.display import Markdown as md
 from IPython.core.magic import register_cell_magic
-from IPython.display import HTML
-import random
-import rpy2.robjects as robjects
-from rpy2.robjects import pandas2ri
+# from IPython.display import HTML
+# import random
 
 # setting the path to the csv files
 path = os.path.join(os.path.abspath(os.getcwd()), 'csvs\\')
@@ -78,11 +77,6 @@ def get_dupes(df):
     else:
         return md("There are no Duplicate Values")
 
-def numerical_analysis(df):
-    print(f"Size: {df.value_counts} rows")
-    print(f"Numerical Variable Analysis:\n\n")
-    df.describe()
-
 
 # function to makea  dataframe of the counts of unique values in columns
 def count_unique(df):
@@ -95,13 +89,13 @@ def count_unique(df):
 
 # function to print the unique values of each categorical column in a dataframe
 def unique_vals(df):
-    only_strings = df.select_dtypes(include=['string']).columns
+    only_categories = df.select_dtypes(include=['category']).columns
     # iterate through the dataframe columns
-    for i in only_strings:
+    for i in only_categories:
         # make a list of lists of unique values in relevant columns less than 25 items in length
-        unique_val_list = [[list(df[i].explode().unique()) for i in only_strings if len(df[i].explode().unique()) < 250]]
+        unique_val_list = [[list(df[i].explode().unique()) for i in only_categories if len(df[i].explode().unique()) < 250]]
         # make a list of the column names for the dataframe index
-        idx = [i for i in only_strings if len(df[i].explode().unique()) < 250]
+        idx = [i for i in only_categories if len(df[i].explode().unique()) < 250]
         # create a df using a dict mapping the values of the unique value list to a column vs a row
         unique_vals_df = dataframe(dict(zip(["Values"], unique_val_list)), index=idx)
         # add a range index to put the variables into a row instead of the index
@@ -111,7 +105,9 @@ def unique_vals(df):
         # return the dataframe 
         return boldify(unique_vals_df)
             
-
+def classify_results(df):
+    df = df.assign(result_class=False)
+    df.loc[(df['result'] == 'Pass') | (df['result'] == 'Distinction'), 'result_class'] = True
 
 # a function to change dataframe column values based on a given dictionary
 def change_col_val(val_dict, df):

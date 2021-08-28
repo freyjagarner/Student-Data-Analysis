@@ -108,7 +108,6 @@ def unique_vals(df):
 def classify_results(df):
     df = df.assign(result_class=False)
     df.loc[(df['result'] == 'Pass') | (df['result'] == 'Distinction'), 'result_class'] = True
-    return df
 
 # a function to change dataframe column values based on a given dictionary
 def change_col_val(val_dict, df):

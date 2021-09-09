@@ -89,7 +89,7 @@ def count_unique(df):
 
 # function to print the unique values of each categorical column in a dataframe
 def unique_vals(df):
-    only_categories = df.select_dtypes(include=['category']).columns
+    only_categories = df.select_dtypes(include=['string']).columns
     # iterate through the dataframe columns
     for i in only_categories:
         # make a list of lists of unique values in relevant columns less than 25 items in length

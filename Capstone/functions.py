@@ -121,3 +121,10 @@ def change_col_val(val_dict, df):
 # a function to get a percentage
 def percentage(part, whole):
     return round(100 * float(part) / float(whole), 2)
+
+def get_kbest(x_train, y_train):
+    selector = SelectKBest(mutual_info_regression, k='all')
+    X_train_new = selector.fit_transform(x_train, y_train) 
+    mask = selector.get_support()    
+    new_features = x_train.columns[mask]
+    return(dataframe(sorted(zip(selector.scores_, new_features), reverse=True)))

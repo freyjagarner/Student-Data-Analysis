@@ -4,7 +4,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
-import import_ipynb
+
 
 # import itertools
 
@@ -90,7 +90,7 @@ def count_unique(df):
 
 # function to print the unique values of each categorical column in a dataframe
 def unique_vals(df):
-    only_categories = df.select_dtypes(include=['category']).columns
+    only_categories = df.select_dtypes(include=['string']).columns
     # iterate through the dataframe columns
     for i in only_categories:
         # make a list of lists of unique values in relevant columns less than 25 items in length
@@ -106,9 +106,9 @@ def unique_vals(df):
         # return the dataframe 
         return boldify(unique_vals_df)
             
-def classify_results(df):
+'''def classify_results(df):
     df = df.assign(result_class=False)
-    df.loc[(df['result'] == 'Pass') | (df['result'] == 'Distinction'), 'result_class'] = True
+    df.loc[(df['result'] == 'Pass') | (df['result'] == 'Distinction'), 'result_class'] = True'''
 
 # a function to change dataframe column values based on a given dictionary
 def change_col_val(val_dict, df):
@@ -122,3 +122,11 @@ def change_col_val(val_dict, df):
 # a function to get a percentage
 def percentage(part, whole):
     return round(100 * float(part) / float(whole), 2)
+
+from sklearn.feature_selection import SelectKBest, mutual_info_regression
+def get_kbest(x_train, y_train):
+    selector = SelectKBest(mutual_info_regression, k='all')
+    X_train_new = selector.fit_transform(x_train, y_train) 
+    mask = selector.get_support()    
+    new_features = x_train.columns[mask]
+    return(dataframe(sorted(zip(selector.scores_, new_features), reverse=True)))

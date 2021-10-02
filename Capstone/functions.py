@@ -5,6 +5,7 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 # import itertools
 
 from IPython.display import Markdown as md
@@ -105,9 +106,9 @@ def unique_vals(df):
         # return the dataframe 
         return boldify(unique_vals_df)
             
-def classify_results(df):
+'''def classify_results(df):
     df = df.assign(result_class=False)
-    df.loc[(df['result'] == 'Pass') | (df['result'] == 'Distinction'), 'result_class'] = True
+    df.loc[(df['result'] == 'Pass') | (df['result'] == 'Distinction'), 'result_class'] = True'''
 
 # a function to change dataframe column values based on a given dictionary
 def change_col_val(val_dict, df):
@@ -122,6 +123,7 @@ def change_col_val(val_dict, df):
 def percentage(part, whole):
     return round(100 * float(part) / float(whole), 2)
 
+from sklearn.feature_selection import SelectKBest, mutual_info_regression
 def get_kbest(x_train, y_train):
     selector = SelectKBest(mutual_info_regression, k='all')
     X_train_new = selector.fit_transform(x_train, y_train) 
